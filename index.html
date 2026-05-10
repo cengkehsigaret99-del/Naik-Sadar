@@ -1,0 +1,33 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0E1B2E"><title>Naik Sadar</title><link rel="manifest" href="manifest.json"><style>*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:radial-gradient(circle at 14% 12%,rgba(212,175,99,.18),transparent 24%),radial-gradient(circle at 88% 20%,rgba(14,27,46,.12),transparent 26%),linear-gradient(160deg,#F6F8FB,#EEF2F7,#FBF8F2);color:#182235}.app{max-width:620px;margin:auto;min-height:100vh;padding:18px 14px 36px}.hero{padding:28px 20px;border-radius:30px;background:linear-gradient(145deg,#0E1B2E,#16253C 55%,#2B4266);color:white;box-shadow:0 22px 54px rgba(15,27,46,.18);margin:10px 0 14px;overflow:hidden;position:relative}.hero:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-60px;bottom:-80px;background:radial-gradient(circle,rgba(212,175,99,.32),transparent 68%)}.logo{width:76px;height:76px;border-radius:25px;display:grid;place-items:center;background:linear-gradient(145deg,rgba(255,255,255,.16),rgba(255,255,255,.06));border:1px solid rgba(255,255,255,.16);font-weight:950;font-size:24px;color:#EAD8A6}.badge{display:inline-block;margin-top:18px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.10);font-size:11px;font-weight:900;color:#EAD8A6;text-transform:uppercase;letter-spacing:.3px}h1{font-size:34px;line-height:1.04;margin:14px 0 8px}p{margin:0;color:#667388;font-size:14px;line-height:1.6}.hero p{color:rgba(255,255,255,.88);max-width:410px}.cards{display:grid;gap:12px;margin-top:14px}.card{display:flex;gap:14px;align-items:flex-start;text-decoration:none;color:inherit;background:rgba(255,255,255,.88);border:1px solid rgba(24,34,53,.09);border-radius:26px;padding:17px;box-shadow:0 18px 48px rgba(15,27,46,.10);backdrop-filter:blur(16px)}.card:active{transform:scale(.99)}.icon{width:54px;height:54px;border-radius:19px;display:grid;place-items:center;background:linear-gradient(145deg,#FFF,#F3E6BF);font-size:26px;flex:0 0 auto}.card h2{font-size:20px;margin:0 0 5px;color:#0E1B2E}.arrow{margin-left:auto;color:#D4AF63;font-weight:950;font-size:24px}.quote{margin-top:14px;padding:15px;border-radius:20px;background:linear-gradient(135deg,#F2EFE7,#FFF9EB);border-left:5px solid #D4AF63;font-weight:900;color:#0E1B2E;line-height:1.45}.foot{text-align:center;color:#667388;font-size:12px;padding-top:18px}</style>
+<style id="cosmic-design-theme">
+.cosmic-bg{position:fixed;inset:0;z-index:-20;pointer-events:none;background:linear-gradient(90deg,rgba(2,5,16,.88),rgba(5,14,36,.58),rgba(2,5,16,.9)),url('cosmic-zeus-bg.jpg') center center/cover no-repeat;}
+body{background:#050814!important;color:#eef6ff;}
+body .hero{background:linear-gradient(145deg,rgba(3,10,28,.80),rgba(10,36,88,.70),rgba(3,10,28,.72)),url('cosmic-zeus-bg.jpg') center center/cover no-repeat!important;border:1px solid rgba(89,168,255,.22);box-shadow:0 22px 60px rgba(0,86,255,.22),0 0 40px rgba(64,160,255,.10)!important;}
+body .card,body .product,body .mini,body .journal{background:rgba(255,255,255,.88)!important;}
+body .logo,body .icon{box-shadow:0 0 22px rgba(65,160,255,.25);}
+.music-toggle{position:fixed;right:14px;bottom:96px;z-index:9999;border:1px solid rgba(120,190,255,.38);border-radius:999px;padding:11px 13px;background:rgba(5,12,30,.78);color:#dcefff;font-weight:900;font-size:12px;box-shadow:0 14px 36px rgba(0,70,180,.28);backdrop-filter:blur(14px);cursor:pointer;}
+.music-toggle.playing{background:linear-gradient(145deg,#0b2b62,#0E1B2E);color:#EAD8A6;border-color:rgba(212,175,99,.48)}
+@media(max-width:520px){.music-toggle{bottom:88px;right:12px;font-size:11px;padding:10px 12px}.cosmic-bg{background-position:center top}}
+</style>
+</head><body>
+<div class="cosmic-bg" aria-hidden="true"></div>
+<audio id="naikSadarBgm" src="backsound.mp3" loop preload="none"></audio>
+<button id="musicToggle" class="music-toggle" type="button" onclick="toggleNaikSadarMusic()">♪ Musik</button>
+<main class="app"><section class="hero"><div class="logo">NS</div><div class="badge">naik sadar</div><h1>Pilih Jalur Hari Ini</h1><p>Masuk ke aplikasi check-in harian, buka pusat materi, atau lihat program/product tambahan.</p></section><section class="cards"><a class="card" href="app.html"><div class="icon">🧭</div><div><h2>Aplikasi Check-in</h2><p>Check-in kesadaran, hasil level, treatment napas, dan jurnal harian.</p></div><div class="arrow">›</div></a><a class="card" href="materi.html"><div class="icon">📚</div><div><h2>Pusat Materi</h2><p>Letting Go, Power of Now, Hormon & Kesadaran.</p></div><div class="arrow">›</div></a><a class="card" href="praktik-harian.html"><div class="icon">🌱</div><div><h2>Praktik Harian</h2><p>Sistem pagi, siang, sore, malam agar latihan masuk ke tubuh dan tindakan.</p></div><div class="arrow">›</div></a><a class="card" href="imun-partnership.html"><div class="icon">🌿</div><div><h2>Program / Product IMUN</h2><p>Health Partnership Program, product utama, pendampingan, dan trainer.</p></div><div class="arrow">›</div></a><a class="card" href="hormon.html"><div class="icon">🧬</div><div><h2>Baca Hormon</h2><p>Untuk tubuh lelah, reaktif, impulsif, atau sulit stabil.</p></div><div class="arrow">›</div></a></section><div class="quote">Hadir dulu. Tenangkan tubuh. Lepaskan cerita. Ambil satu tindakan kecil.</div><div class="foot">Naik Sadar • ruang latihan kesadaran harian</div></main>
+<script id="cosmic-audio-script">
+(function(){
+  const audioId='naikSadarBgm';
+  const btnId='musicToggle';
+  window.toggleNaikSadarMusic=function(){
+    const a=document.getElementById(audioId); const b=document.getElementById(btnId);
+    if(!a||!b) return;
+    if(a.paused){
+      a.volume=0.32;
+      a.play().then(()=>{b.classList.add('playing');b.textContent='♪ Backsound ON';}).catch(()=>{b.textContent='Tap Musik';});
+    }else{
+      a.pause(); b.classList.remove('playing'); b.textContent='♪ Musik';
+    }
+  };
+})();
+</script>
+</body></html>
