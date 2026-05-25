@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050814">
+<title>Power vs Force - Naik Sadar</title>
+<link rel="manifest" href="manifest.json">
+<style>
+:root{--bg:#030712;--card:#07162dd9;--text:#fff;--muted:#e7f0ff;--ink:#071326;--ink2:#233b60;--gold:#f5c85f;--gold2:#ffe8a6;--blue:#7fc2ff;--green:#80e1b8;--red:#ff9b8a;--line:rgba(255,255,255,.20);--shadow:0 24px 70px rgba(0,0,0,.48);--r:28px}*{box-sizing:border-box}html,body{margin:0;padding:0}body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}.cosmic-bg{position:fixed;inset:0;z-index:-3;background:linear-gradient(180deg,rgba(0,3,12,.72),rgba(0,5,18,.92)),url('cosmic-zeus-bg.jpg') center top/cover no-repeat}.cosmic-bg:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 12%,rgba(127,194,255,.24),transparent 30%),radial-gradient(circle at 82% 22%,rgba(245,200,95,.15),transparent 25%),linear-gradient(180deg,rgba(2,8,22,.1),rgba(2,8,22,.68))}.app{max-width:640px;margin:auto;min-height:100vh;padding:18px 14px 118px}.glass{background:linear-gradient(180deg,rgba(7,22,45,.90),rgba(5,16,35,.80));border:1px solid var(--line);box-shadow:var(--shadow);backdrop-filter:blur(18px);border-radius:var(--r)}.hero{padding:26px 20px;margin:8px 0 14px;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;right:-70px;top:-70px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(245,200,95,.32),transparent 66%)}.logo{width:78px;height:78px;border-radius:26px;display:grid;place-items:center;background:linear-gradient(145deg,rgba(255,255,255,.20),rgba(255,255,255,.06));border:1px solid rgba(255,255,255,.24);color:var(--gold2);font-size:27px;font-weight:1000;letter-spacing:.05em;box-shadow:0 0 42px rgba(127,194,255,.22)}.badge{display:inline-flex;margin-top:15px;padding:9px 13px;border-radius:999px;background:rgba(245,200,95,.16);border:1px solid rgba(245,200,95,.30);font-size:12px;font-weight:1000;letter-spacing:.4px;text-transform:uppercase;color:var(--gold2)}h1{font-size:40px;line-height:1.03;margin:15px 0 10px;color:#fff;letter-spacing:-1px;position:relative;z-index:2}h2{font-size:27px;line-height:1.12;margin:0 0 10px;color:#fff}h3{font-size:21px;line-height:1.22;margin:0 0 7px;color:#fff}p{font-size:18px;line-height:1.6;margin:0;color:var(--muted)}.hero p{font-size:19px;color:#f0f7ff;position:relative;z-index:2}.cards{display:grid;gap:13px;margin-top:14px}.card{display:block;text-decoration:none;color:inherit;padding:19px;border-radius:24px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.20);box-shadow:0 18px 52px rgba(0,0,0,.28);backdrop-filter:blur(14px)}.card.light{background:rgba(255,255,255,.96);color:var(--ink);border-color:rgba(255,255,255,.9)}.card.light h2,.card.light h3{color:var(--ink)}.card.light p,.card.light li{color:var(--ink2)}.actions{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:15px}.btn{appearance:none;border:0;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:16px 18px;border-radius:18px;font-size:17px;font-weight:1000;min-height:56px;cursor:pointer}.btn.primary{background:linear-gradient(145deg,var(--gold2),var(--gold));color:#07111f;box-shadow:0 16px 36px rgba(245,200,95,.24)}.btn.ghost{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.24)}.quote{margin-top:15px;padding:17px;border-radius:21px;background:rgba(245,200,95,.15);border-left:7px solid var(--gold);color:#fff;font-size:19px;font-weight:1000;line-height:1.45}.list{margin:9px 0 0;padding-left:21px}.list li{font-size:17px;line-height:1.58;margin:8px 0;color:var(--muted)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.principle{padding:17px;border-radius:22px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.10)}.principle b{display:block;font-size:20px;margin-bottom:7px;color:var(--gold2)}.principle span{display:block;font-size:16px;line-height:1.5;color:#d8e7ff}.checklist{display:grid;gap:10px;margin-top:10px}.check{padding:14px;border-radius:18px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.16);font-size:17px;line-height:1.45}.safe-note{font-size:15px;line-height:1.55;color:#ffe8a6;font-weight:850}.music-toggle{position:fixed;right:14px;bottom:92px;z-index:99;border-radius:999px;padding:14px 17px;border:1px solid rgba(245,200,95,.55);background:linear-gradient(145deg,#102c5b,#071326);color:#fff;font-weight:1000;font-size:15px;box-shadow:0 18px 44px rgba(0,0,0,.40);backdrop-filter:blur(14px)}.music-toggle.playing{background:linear-gradient(145deg,var(--gold2),var(--gold));color:#081326}.nav{position:fixed;left:50%;bottom:10px;transform:translateX(-50%);width:min(620px,calc(100% - 18px));display:grid;grid-template-columns:repeat(4,1fr);gap:7px;padding:8px;border-radius:24px;background:rgba(3,9,22,.94);border:1px solid rgba(255,255,255,.18);box-shadow:0 22px 54px rgba(0,0,0,.48);backdrop-filter:blur(18px);z-index:80}.nav a{text-decoration:none;text-align:center;color:#d8e7ff;border-radius:16px;padding:12px 6px;font-size:12.5px;font-weight:1000}.nav a.active{background:linear-gradient(145deg,#ffe8a6,#f5c85f);color:#071326}@media(max-width:430px){.app{padding-left:12px;padding-right:12px}h1{font-size:34px}h2{font-size:24px}h3{font-size:20px}p{font-size:17px}.hero p{font-size:17px}.actions,.grid2{grid-template-columns:1fr}.card{padding:17px}.nav a{font-size:11.5px}.music-toggle{right:10px;bottom:84px;font-size:13px;padding:13px 14px}}
+</style>
+</head>
+<body>
+<div class="cosmic-bg" aria-hidden="true"></div>
+<audio id="naikSadarBgm" src="backsound.mp3" loop preload="metadata"></audio>
+<button id="musicToggle" class="music-toggle" type="button" onclick="toggleNaikSadarMusic()">▶ Musik</button>
+<script>
+(function(){const audioId='naikSadarBgm',btnId='musicToggle';window.toggleNaikSadarMusic=function(){const a=document.getElementById(audioId),b=document.getElementById(btnId);if(!a||!b)return;a.volume=1;a.muted=false;if(a.paused){const p=a.play();if(p&&p.then){p.then(()=>{b.classList.add('playing');b.textContent='♪ Musik ON'}).catch(()=>{b.textContent='Tekan Play Audio'})}else{b.classList.add('playing');b.textContent='♪ Musik ON'}}else{a.pause();b.classList.remove('playing');b.textContent='▶ Musik'}}})();
+</script>
+<main class="app">
+<section class="hero glass">
+  <div class="logo">NS</div>
+  <div class="badge">Daya Kesadaran</div>
+  <h1>Power vs Force</h1>
+  <p>Latihan membedakan tindakan yang lahir dari kesadaran dengan tindakan yang lahir dari tekanan ego.</p>
+  <div class="actions"><a class="btn primary" href="app.html">Buka Aplikasi</a><a class="btn ghost" href="materi.html">Pusat Materi</a></div>
+</section>
+
+<section class="card light">
+  <h2>Inti Materi</h2>
+  <p><b>Force</b> adalah gerak batin yang memaksa keadaan karena takut, marah, gengsi, ingin menang, ingin mengontrol, atau ingin cepat lega. Tampaknya kuat, tetapi biasanya boros energi dan meninggalkan ketegangan.</p>
+  <br>
+  <p><b>Power</b> adalah daya yang muncul dari kesadaran, keberanian, integritas, kasih, penerimaan, dan kejernihan. Power tidak perlu memaksa. Ia bisa tegas, tetapi tidak menyerang.</p>
+</section>
+
+<section class="grid2 cards">
+  <div class="principle"><b>Force</b><span>Tekanan. Reaksi cepat. Tubuh menegang. Pikiran ingin menang atau segera lega. Biasanya membuat keputusan terasa sangat mendesak.</span></div>
+  <div class="principle"><b>Power</b><span>Ruang batin. Napas lebih dalam. Tubuh lebih turun. Ada jeda untuk memilih tindakan yang benar, bukan sekadar tindakan yang memuaskan ego.</span></div>
+</section>
+
+<section class="card">
+  <h2>Tanda Force di Tubuh</h2>
+  <ul class="list">
+    <li>Napas pendek, dada panas, rahang mengeras, pundak naik.</li>
+    <li>Ingin langsung membalas, menyalahkan, menekan, membeli, atau membuat keputusan cepat.</li>
+    <li>Ada rasa: “kalau tidak sekarang, aku kalah”.</li>
+    <li>Pikiran sempit: hanya melihat ancaman, bukan fakta utuh.</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Tanda Power di Tubuh</h2>
+  <ul class="list">
+    <li>Napas lebih panjang dan tubuh terasa lebih turun.</li>
+    <li>Bisa menunda respons beberapa saat.</li>
+    <li>Bisa berkata tidak tanpa menyerang.</li>
+    <li>Bisa minta data, memperbaiki, dan memimpin tanpa panik.</li>
+  </ul>
+</section>
+
+<section class="card light">
+  <h2>Gerbang Keberanian</h2>
+  <p>Dalam latihan ini, titik balik dari force menuju power adalah keberanian. Keberanian bukan berarti tidak takut. Keberanian berarti tetap memilih yang benar walau rasa takut masih ada.</p>
+  <div class="quote" style="color:#071326;background:#fff4cc;border-left-color:#f5c85f">Aku memilih benar, bukan menang. Aku memilih tenang, bukan kontrol.</div>
+</section>
+
+<section class="card">
+  <h2>Kompas Sebelum Bertindak</h2>
+  <div class="checklist">
+    <div class="check">Apakah tindakan ini lahir dari takut atau dari jernih?</div>
+    <div class="check">Apakah aku sedang memperbaiki keadaan, atau hanya membuat ego cepat lega?</div>
+    <div class="check">Apakah tubuhku sedang tegang atau cukup longgar?</div>
+    <div class="check">Kalau aku jeda 90 detik, apakah keputusan ini masih sama?</div>
+    <div class="check">Apa satu tindakan kecil yang paling sadar sekarang?</div>
+  </div>
+</section>
+
+<section class="card light">
+  <h2>Latihan 90 Detik</h2>
+  <ul class="list">
+    <li>Berhenti dulu. Jangan kirim pesan, jangan belanja, jangan memutuskan saat tubuh panas.</li>
+    <li>Rasakan rahang, pundak, dada, dan perut.</li>
+    <li>Tarik napas pelan, hembus lebih panjang.</li>
+    <li>Tanya: “Ini force atau power?”</li>
+    <li>Pilih satu langkah kecil yang benar dan tenang.</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Contoh Harian Naik Sadar</h2>
+  <ul class="list">
+    <li><b>Uang:</b> force panik melihat saldo; power cek fakta, jeda, lalu patuhi batas.</li>
+    <li><b>Rumah:</b> force menyindir karena berantakan; power bereskan 10 benda dan bicara pelan.</li>
+    <li><b>Kerja:</b> force menekan orang karena takut kacau; power minta data, cek stok, lalu putuskan bertahap.</li>
+    <li><b>Komunikasi:</b> force membalas cepat saat tersinggung; power baca ulang, napas, lalu jawab singkat dan jelas.</li>
+  </ul>
+</section>
+
+<section class="card light">
+  <h2>Catatan Aman</h2>
+  <p class="safe-note">Materi ini dipakai sebagai alat refleksi kesadaran dan latihan batin. Bukan alat diagnosis medis, bukan ukuran ilmiah mutlak, dan bukan pengganti nasihat profesional bila kondisi tubuh atau emosi terasa berat.</p>
+</section>
+
+<div class="quote">Force membuat kita bergerak karena luka. Power membuat kita bergerak karena sadar.</div>
+</main>
+<nav class="nav"><a href="index.html">Home</a><a href="app.html">Aplikasi</a><a class="active" href="materi.html">Materi</a><a href="app.html#breath">Napas</a></nav>
+</body>
+</html>
