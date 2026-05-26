@@ -1,0 +1,58 @@
+{
+  "release_name": "Naik Sadar Bali Nusantara Theme",
+  "version": "16",
+  "branch": "feature/nusantara-visual-theme-v2",
+  "pull_request": 4,
+  "status": "draft_ready_for_mobile_qa",
+  "main_updates": [
+    "Bali Nusantara visual theme",
+    "Mandala Sadar Nusantara gateway",
+    "Nusantara shared CSS theme",
+    "Synthetic instrumental audio engine",
+    "Music and silence preference saved in browser",
+    "Safe-area floating button positioning",
+    "Safety mode themed with Nusantara visual style",
+    "Wrappers for main app and supporting modules"
+  ],
+  "core_files": [
+    "assets/nusantara-theme.css",
+    "assets/nusantara-audio.js",
+    "index.html",
+    "gerbang-10.html",
+    "app-pro-safe.html",
+    "kebersihan-sadar-safe.html",
+    "kebersihan-5s-nusantara.html",
+    "latihan-pro-nusantara.html",
+    "naik-sadar-2-nusantara-audio.html",
+    "safety/index.html"
+  ],
+  "qa_files": [
+    "safety/qa-nusantara.html",
+    "safety/nusantara-audio-qa.json",
+    "safety/floating-control-qa.json"
+  ],
+  "must_test_on_mobile": [
+    "gerbang-10.html?v=16",
+    "app-pro-safe.html?v=16",
+    "kebersihan-sadar-safe.html?v=16",
+    "kebersihan-5s-nusantara.html?v=16",
+    "latihan-pro-nusantara.html?v=16",
+    "naik-sadar-2-nusantara-audio.html?v=16",
+    "safety/index.html?v=16"
+  ],
+  "merge_requirements": [
+    "Text remains readable on mobile",
+    "Music/Hening button works",
+    "Bantuan button remains visible",
+    "Floating controls do not overlap bottom navigation",
+    "Audio is not too loud",
+    "Gateway links open correctly",
+    "Safety mode still works"
+  ],
+  "score_estimate": {
+    "visual_design": 92,
+    "safety_access": 98,
+    "mobile_ready_before_screenshot": 85,
+    "mobile_ready_after_visual_qa_target": 99
+  }
+}

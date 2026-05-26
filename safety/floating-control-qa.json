@@ -1,0 +1,30 @@
+{
+  "name": "Floating Control QA",
+  "version": "16",
+  "purpose": "Cek posisi tombol Musik/Hening dan Bantuan pada HP.",
+  "status": "ready_for_mobile_test",
+  "controls": [
+    "Musik/Hening button",
+    "Bantuan button",
+    "Gerbang button",
+    "bottom navigation"
+  ],
+  "pass_if": [
+    "Musik/Hening tidak menutup Bantuan",
+    "Bantuan tidak menutup bottom navigation",
+    "Gerbang tetap bisa diklik",
+    "Semua tombol masih terlihat di layar kecil",
+    "Tombol tetap aman pada HP dengan safe area bawah"
+  ],
+  "pages": [
+    "gerbang-10.html?v=16",
+    "app-pro-safe.html?v=16",
+    "kebersihan-sadar-safe.html?v=16",
+    "kebersihan-5s-nusantara.html?v=16",
+    "latihan-pro-nusantara.html?v=16",
+    "naik-sadar-2-nusantara-audio.html?v=16",
+    "safety/index.html?v=16"
+  ],
+  "latest_css_commit": "d8402288c0f55678086787783fca33f19519f28c",
+  "note": "CSS safe-area override uses --ns-float-bottom and !important to control floating button position."
+}
