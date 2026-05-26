@@ -1,0 +1,76 @@
+{
+  "project": "Naik Sadar",
+  "safety_version": "15",
+  "status": "active_integrated",
+  "last_update_focus": "Mode Bantuan access and QA control",
+  "completed": [
+    {
+      "item": "Safety engine added",
+      "file": "safety/safety-engine.js",
+      "status": "done"
+    },
+    {
+      "item": "Mode Bantuan page added",
+      "file": "safety/index.html",
+      "status": "done"
+    },
+    {
+      "item": "Gateway access added",
+      "file": "gerbang-10.html",
+      "status": "done"
+    },
+    {
+      "item": "Main app home card added",
+      "file": "app-pro.html",
+      "status": "done"
+    },
+    {
+      "item": "Floating help shortcut added",
+      "file": "app-pro.html",
+      "status": "done"
+    },
+    {
+      "item": "Safety scorecard saved",
+      "file": "safety/scorecard.json",
+      "status": "done"
+    },
+    {
+      "item": "Mobile QA checklist saved",
+      "file": "safety/mobile-qa-checklist.json",
+      "status": "done"
+    }
+  ],
+  "pending": [
+    {
+      "item": "Manual mobile screenshot check",
+      "reason": "Need to confirm floating help button does not cover bottom navigation",
+      "priority": "high"
+    },
+    {
+      "item": "Add help shortcut to cleanliness module",
+      "file": "kebersihan-sadar.html",
+      "priority": "medium"
+    },
+    {
+      "item": "Add help shortcut to 5S module",
+      "file": "kebersihan-5s.html",
+      "priority": "medium"
+    },
+    {
+      "item": "Simplify safety result view if user feels page too technical",
+      "file": "safety/index.html",
+      "priority": "medium"
+    },
+    {
+      "item": "Review privacy wording before public positioning",
+      "file": "safety/index.html",
+      "priority": "medium"
+    }
+  ],
+  "recommended_next_step": "Open the app on mobile, capture screenshots of gerbang, app home, floating help button, and Mode Bantuan page. Then adjust UI position if needed.",
+  "score": {
+    "current_design_score": 98,
+    "target_after_visual_qa": 99,
+    "target_after_expert_review": 100
+  }
+}
