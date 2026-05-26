@@ -1,0 +1,45 @@
+{
+  "project": "Naik Sadar",
+  "version": "15",
+  "purpose": "Rencana integrasi Mode Bantuan ke modul selain app-pro.",
+  "status": "planned",
+  "target_modules": [
+    {
+      "file": "kebersihan-sadar.html",
+      "module_name": "Modul Kebersihan",
+      "current_home_link": "gerbang-10.html / app-pro.html",
+      "recommended_update": "Tambah tombol floating Bantuan menuju safety/index.html?v=15 di kanan bawah, di atas navigasi bawah.",
+      "risk": "File single-line panjang; update harus minimal agar tidak merusak fungsi localStorage dan navigasi internal.",
+      "priority": "medium"
+    },
+    {
+      "file": "kebersihan-5s.html",
+      "module_name": "5S Sadar",
+      "current_home_link": "kebersihan-sadar.html",
+      "recommended_update": "Tambah tombol floating Bantuan menuju safety/index.html?v=15 di kanan bawah, di atas navigasi bawah.",
+      "risk": "File single-line panjang; update harus menjaga checklist 5S dan riwayat tetap berjalan.",
+      "priority": "medium"
+    }
+  ],
+  "ui_rule": {
+    "label": "Bantuan",
+    "href": "safety/index.html?v=15",
+    "position": "fixed bottom right above nav",
+    "visual": "red pill button with white text",
+    "reason": "User yang sedang panik/bingung tidak perlu kembali ke gerbang untuk mencari bantuan."
+  },
+  "acceptance_criteria": [
+    "Tombol Bantuan terlihat di kebersihan-sadar.html.",
+    "Tombol Bantuan terlihat di kebersihan-5s.html.",
+    "Tombol tidak menutup navigasi bawah.",
+    "Semua fitur lama tetap bekerja.",
+    "Link menuju safety/index.html?v=15."
+  ],
+  "implementation_order": [
+    "Backup/fetch isi file terbaru.",
+    "Tambah CSS .helpfloat.",
+    "Tambah anchor sebelum nav bawah.",
+    "Uji visual mobile.",
+    "Update integration-status.json menjadi done setelah lulus."
+  ]
+}
