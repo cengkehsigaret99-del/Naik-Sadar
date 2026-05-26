@@ -1,0 +1,28 @@
+{
+  "name": "Nusantara Dark Mode QA",
+  "version": "17",
+  "status": "ready_for_mobile_test",
+  "theme_modes": ["Auto", "Terang", "Gelap"],
+  "pages_to_check": [
+    "gerbang-10.html?v=17",
+    "app-pro-safe.html?v=17",
+    "safety/index.html?v=17"
+  ],
+  "must_pass": [
+    "Tema button appears",
+    "Tema cycles Auto to Terang to Gelap",
+    "Dark mode background is warm, not pure black",
+    "Text remains readable",
+    "Cards do not glare",
+    "Gold accents are visible but not too bright",
+    "Music/Hening button remains visible",
+    "Bantuan button remains visible",
+    "Theme preference persists after page change"
+  ],
+  "fix_rules": [
+    "If text is too dim, lighten secondary text color",
+    "If gold is too bright, reduce accent saturation",
+    "If theme button overlaps content, move it lower or smaller",
+    "If Auto mode is confusing, default to Terang and let user choose Gelap"
+  ]
+}
