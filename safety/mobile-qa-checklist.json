@@ -21,6 +21,14 @@
       "expected": "Tombol floating Bantuan terlihat, tidak menutup nav bawah"
     },
     {
+      "page": "kebersihan-sadar-safe.html?v=15",
+      "expected": "Modul Kerapian tampil dalam wrapper dan tombol Bantuan terlihat"
+    },
+    {
+      "page": "kebersihan-5s-safe.html?v=15",
+      "expected": "Mode 5S tampil dalam wrapper dan tombol Bantuan terlihat"
+    },
+    {
       "page": "safety/index.html?v=15",
       "expected": "Judul Mode Bantuan tampil, tombol kembali ke aplikasi dan gerbang tersedia"
     }
@@ -49,18 +57,34 @@
     {
       "id": "QA-05",
       "test": "Masuk Mode Bantuan dan klik kembali ke aplikasi",
-      "pass_if": "Kembali ke app-pro.html?v=12 atau versi aplikasi yang aktif"
+      "pass_if": "Kembali ke app-pro.html atau gerbang sesuai tombol yang dipilih"
     },
     {
       "id": "QA-06",
       "test": "Masukkan input panik/bingung/impulsif ringan",
       "pass_if": "Aplikasi memberi level risiko dan menampilkan instruksi singkat"
+    },
+    {
+      "id": "QA-07",
+      "test": "Klik Kerapian Area dari gerbang",
+      "pass_if": "Masuk ke kebersihan-sadar-safe.html?v=15 dan tombol Bantuan terlihat"
+    },
+    {
+      "id": "QA-08",
+      "test": "Klik Mode 5S dari gerbang",
+      "pass_if": "Masuk ke kebersihan-5s-safe.html?v=15 dan tombol Bantuan terlihat"
+    },
+    {
+      "id": "QA-09",
+      "test": "Klik Bantuan dari wrapper Kerapian atau 5S",
+      "pass_if": "Masuk ke safety/index.html?v=15"
     }
   ],
   "next_action_after_test": [
     "Jika tombol floating menutup menu bawah, naikkan posisi bottom atau kecilkan padding.",
     "Jika Mode Bantuan terlalu bawah di gerbang, pindahkan lebih dekat ke Alat Utama.",
     "Jika halaman lama masih muncul, naikkan query version lagi.",
-    "Jika safety page terasa terlalu teknis, sederhanakan hasil analisis dan sembunyikan log."
+    "Jika safety page terasa terlalu teknis, sederhanakan hasil analisis dan sembunyikan log.",
+    "Jika iframe wrapper terasa berat di HP, lakukan integrasi langsung ke file asli dengan patch minimal."
   ]
 }
