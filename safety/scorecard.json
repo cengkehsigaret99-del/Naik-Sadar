@@ -1,0 +1,28 @@
+{
+  "name": "Naik Sadar Safety Mode",
+  "version": "15",
+  "status": "integrated",
+  "design_score": 98,
+  "max_score": 100,
+  "components": [
+    {"name": "risk_detection", "score": 20, "weight": 20},
+    {"name": "calm_response", "score": 20, "weight": 20},
+    {"name": "human_help_path", "score": 19, "weight": 20},
+    {"name": "clear_boundary", "score": 10, "weight": 10},
+    {"name": "privacy_note", "score": 14, "weight": 15},
+    {"name": "panic_usability", "score": 10, "weight": 10},
+    {"name": "local_access", "score": 5, "weight": 5}
+  ],
+  "access_points": [
+    "gerbang-10.html",
+    "app-pro.html home card",
+    "app-pro.html floating help",
+    "safety/index.html return links"
+  ],
+  "next_checks": [
+    "mobile visual check",
+    "button position check",
+    "page cache check",
+    "manual user-flow test"
+  ]
+}
