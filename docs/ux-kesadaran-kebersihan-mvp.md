@@ -2,29 +2,29 @@
 
 ## Posisi Modul
 
-Kesadaran Kebersihan adalah modul Naik Sadar untuk mengubah aktivitas merapikan ruang menjadi latihan hadir.
+Kesadaran Kebersihan adalah modul Naik Sadar untuk membantu pengguna mengevaluasi kondisi area, melakukan jeda singkat, memilih tindakan perapian sederhana, dan mencatat hasilnya.
 
-Modul tidak memaksa pengguna menjadi sempurna. Modul membantu pengguna melihat kondisi, menenangkan tubuh, mengambil satu tindakan kecil, lalu mencatat perubahan rasa.
+Modul ini tidak dirancang untuk menilai pengguna. Modul berfungsi sebagai alat bantu observasi, pembentukan kebiasaan, dan pemeliharaan standar area.
 
 ## Inspirasi Desain
 
-- Hawkins: bergerak dari malu, panik, marah, dan kontrol menuju menerima, sadar, dan bertanggung jawab.
-- Tolle: hadir di saat ini sebelum bereaksi.
-- Atomic Habits: tindakan kecil yang bisa diulang.
-- 5S dan Kaizen: pilah, tata, bersihkan, standarkan, rawat.
+- Hawkins: membaca kecenderungan reaktif dan mengarahkannya ke pilihan yang lebih terukur.
+- Tolle: memberi jeda sebelum pengguna mengambil tindakan.
+- Atomic Habits: menggunakan tindakan kecil yang mudah diulang.
+- 5S dan Kaizen: pilah, tata, bersihkan, standarkan, pelihara.
 
 ## Alur Layar
 
 ### 1. Dashboard
 
 Konten utama:
-- Skor kesadaran kebersihan hari ini.
-- Area yang disarankan untuk disentuh.
+- Skor kondisi area hari ini.
+- Area yang disarankan untuk dievaluasi.
 - Tombol Mulai Satu Area.
 - Ringkasan sesi terakhir.
 
 Microcopy:
-Mulai dari satu bagian kecil.
+Mulai dari satu area kecil.
 
 ### 2. Pilih Area
 
@@ -46,21 +46,21 @@ Area awal:
 ### 3. Cek Kondisi
 
 Pertanyaan:
-Saat melihat area ini, tubuh dan pikiran terasa bagaimana?
+Bagaimana kondisi area ini saat ini?
 
 Pilihan:
-- Ringan
-- Biasa saja
-- Agak berat
-- Tegang
-- Menghindar
+- Terkendali
+- Cukup rapi
+- Perlu dirapikan
+- Mengganggu fokus
+- Sering dihindari
 
 Skor:
-1 = kacau dan dihindari
-2 = berantakan dan berat
+1 = sangat perlu ditata
+2 = perlu perapian
 3 = cukup terkendali
-4 = bersih dan nyaman
-5 = bersih dan dijaga
+4 = rapi dan nyaman
+5 = rapi dan terpelihara
 
 ### 4. Jeda Napas
 
@@ -71,7 +71,7 @@ Buang perlahan 6 hitungan.
 Ulangi 3 kali.
 
 Microcopy:
-Jangan mulai dari panik. Mulai dari hadir.
+Ambil jeda singkat sebelum memulai.
 
 ### 5. Tindakan Kecil
 
@@ -87,17 +87,17 @@ Contoh gudang:
 - Pisahkan barang rusak.
 - Bersihkan 1 jalur jalan.
 
-### 6. Refleksi Setelah
+### 6. Evaluasi Setelah
 
 Pertanyaan:
-Setelah tindakan kecil ini, apa yang berubah?
+Apa hasil setelah tindakan singkat ini?
 
-Pilihan rasa:
-- Lebih ringan
-- Lebih tenang
-- Masih berat
-- Capek tapi lega
-- Lebih siap lanjut
+Pilihan hasil:
+- Area lebih rapi
+- Area lebih mudah digunakan
+- Masih perlu dilanjutkan
+- Cukup untuk hari ini
+- Siap dievaluasi lagi nanti
 
 Input:
 - Skor sesudah
@@ -111,7 +111,7 @@ Tampilkan:
 - Skor sebelum
 - Skor sesudah
 - Tindakan
-- Rasa setelah
+- Hasil setelah
 
 ## Data Model
 
@@ -124,7 +124,7 @@ cleanliness_sessions:
 - breath_completed
 - selected_action
 - score_after
-- feeling_after
+- result_after
 - note
 - created_at
 
@@ -139,7 +139,7 @@ cleanliness_standards:
 
 - Pengguna bisa memilih area.
 - Pengguna bisa memberi skor sebelum.
-- Pengguna melihat panduan napas.
+- Pengguna melihat panduan jeda napas.
 - Pengguna bisa memilih tindakan kecil.
 - Pengguna bisa memberi skor sesudah.
 - Pengguna bisa melihat riwayat sesi.
@@ -151,5 +151,5 @@ cleanliness_standards:
 - Kalimat pendek.
 - Warna lembut.
 - Banyak ruang kosong.
-- Tidak ada bahasa menyalahkan.
-- Cocok untuk pengguna yang sedang capek atau overwhelm.
+- Bahasa netral dan tidak menilai pengguna.
+- Cocok untuk penggunaan harian yang cepat.
