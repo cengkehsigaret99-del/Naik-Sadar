@@ -1,0 +1,35 @@
+{
+  "name": "Nusantara Visual and Audio QA",
+  "version": "16",
+  "branch": "feature/nusantara-visual-theme-v2",
+  "status": "ready_for_mobile_test",
+  "pages_to_check": [
+    "gerbang-10.html?v=16",
+    "app-pro-safe.html?v=16",
+    "kebersihan-sadar-safe.html?v=16",
+    "kebersihan-5s-nusantara.html?v=16",
+    "latihan-pro-nusantara.html?v=16",
+    "naik-sadar-2-nusantara-audio.html?v=16",
+    "safety/index.html?v=16"
+  ],
+  "visual_checks": [
+    "Bali Nusantara color tone appears warm and consistent",
+    "ornament line appears without disturbing text readability",
+    "cards remain readable on mobile",
+    "buttons remain large enough for panic or low-focus user",
+    "Bantuan button remains visible"
+  ],
+  "audio_checks": [
+    "Musik button appears",
+    "Audio starts after tap if browser blocks autoplay",
+    "Hening button stops audio",
+    "Audio is soft and not distracting",
+    "Audio button does not cover Bantuan button or bottom navigation"
+  ],
+  "fix_rules": [
+    "If music button overlaps Bantuan, move Musik to top-left or raise bottom offset",
+    "If audio feels too loud, lower master gain in assets/nusantara-audio.js",
+    "If page feels too heavy, disable iframe theme injection for non-core modules",
+    "If text contrast is weak, darken brown text or lighten card background"
+  ]
+}
