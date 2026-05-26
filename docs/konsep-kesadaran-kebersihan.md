@@ -1,20 +1,20 @@
 # Konsep Kesadaran Kebersihan
 
-Modul ini menjadikan kebersihan sebagai latihan sadar harian.
+Modul ini membantu pengguna mengevaluasi kondisi area, memilih tindakan perapian singkat, dan mencatat hasilnya.
 
 Rumus inti:
-Napas -> Lihat -> Rapikan -> Rasakan -> Ulangi.
+Observasi -> Atur Napas -> Pilih Tindakan -> Evaluasi -> Ulangi.
 
 Tujuan MVP:
 1. Pilih area.
 2. Nilai kondisi awal.
-3. Lakukan jeda napas.
-4. Pilih tindakan kecil.
-5. Catat rasa setelah selesai.
+3. Lakukan jeda napas singkat.
+4. Pilih tindakan kecil yang terukur.
+5. Catat hasil setelah selesai.
 
 Karakter desain:
 - Tenang.
 - Bersih.
-- Tidak menghakimi.
+- Netral.
 - Tindakan kecil.
 - Mudah dipakai setiap hari.
