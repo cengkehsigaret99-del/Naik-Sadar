@@ -1,91 +1,36 @@
 {
   "project": "Naik Sadar",
-  "safety_version": "15",
-  "status": "active_integrated",
-  "last_update_focus": "Mode Bantuan access expanded to core modules",
-  "completed": [
-    {
-      "item": "Safety engine added",
-      "file": "safety/safety-engine.js",
-      "status": "done"
-    },
-    {
-      "item": "Mode Bantuan page added",
-      "file": "safety/index.html",
-      "status": "done"
-    },
-    {
-      "item": "Gateway access added",
-      "file": "gerbang-10.html",
-      "status": "done"
-    },
-    {
-      "item": "Main app home card added",
-      "file": "app-pro.html",
-      "status": "done"
-    },
-    {
-      "item": "Floating help shortcut added",
-      "file": "app-pro.html",
-      "status": "done"
-    },
-    {
-      "item": "Safety scorecard saved",
-      "file": "safety/scorecard.json",
-      "status": "done"
-    },
-    {
-      "item": "Mobile QA checklist saved",
-      "file": "safety/mobile-qa-checklist.json",
-      "status": "done"
-    },
-    {
-      "item": "Cleanliness module safe wrapper added",
-      "file": "kebersihan-sadar-safe.html",
-      "status": "done"
-    },
-    {
-      "item": "5S module safe wrapper added",
-      "file": "kebersihan-5s-safe.html",
-      "status": "done"
-    },
-    {
-      "item": "Gateway routed to safe wrappers for Kerapian and 5S",
-      "file": "gerbang-10.html",
-      "status": "done"
-    }
+  "version": "15",
+  "status": "all_gateway_modules_connected",
+  "done_files": [
+    "safety/index.html",
+    "safety/safety-engine.js",
+    "app-pro.html",
+    "gerbang-10.html",
+    "kebersihan-sadar-safe.html",
+    "kebersihan-5s-safe.html",
+    "latihan-pro-safe.html",
+    "naik-sadar-2-safe.html",
+    "safety/scorecard.json",
+    "safety/mobile-qa-checklist.json"
+  ],
+  "gateway_routes": [
+    "app-pro.html?v=15",
+    "kebersihan-sadar-safe.html?v=15",
+    "kebersihan-5s-safe.html?v=15",
+    "safety/index.html?v=15",
+    "latihan-pro-safe.html?v=15",
+    "naik-sadar-2-safe.html?v=15"
   ],
   "pending": [
-    {
-      "item": "Manual mobile screenshot check",
-      "reason": "Need to confirm floating help buttons do not cover bottom navigation in app-pro, Kerapian wrapper, and 5S wrapper",
-      "priority": "high"
-    },
-    {
-      "item": "Simplify safety result view if user feels page too technical",
-      "file": "safety/index.html",
-      "priority": "medium"
-    },
-    {
-      "item": "Review privacy wording before public positioning",
-      "file": "safety/index.html",
-      "priority": "medium"
-    },
-    {
-      "item": "Optional: add safe wrapper for Latihan Singkat",
-      "file": "latihan-pro.html",
-      "priority": "low"
-    },
-    {
-      "item": "Optional: add safe wrapper for Versi Lengkap",
-      "file": "naik-sadar-2.html",
-      "priority": "low"
-    }
+    "mobile screenshot check",
+    "button position check",
+    "simplify safety page if needed",
+    "privacy wording review"
   ],
-  "recommended_next_step": "Open the app on mobile, capture screenshots of gerbang, app home, Kerapian wrapper, 5S wrapper, floating help button, and Mode Bantuan page. Then adjust button position if needed.",
   "score": {
-    "current_design_score": 98,
-    "target_after_visual_qa": 99,
-    "target_after_expert_review": 100
+    "current": 98,
+    "after_mobile_qa": 99,
+    "after_expert_review": 100
   }
 }
