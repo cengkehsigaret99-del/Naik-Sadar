@@ -34,8 +34,8 @@ Alasan:
 
 ## Decision 004
 
-Mode 5S dibuat terpisah dari sesi kebersihan sadar.
+Mode 5S dibuat terpisah dari sesi evaluasi area.
 
 Alasan:
-- sesi kebersihan fokus rasa dan tindakan kecil
-- 5S fokus standar dan sistem
+- sesi evaluasi area fokus pada kondisi, tindakan singkat, dan hasil
+- mode 5S fokus pada standar, checklist, dan pemeliharaan area
