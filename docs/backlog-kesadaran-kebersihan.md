@@ -2,14 +2,14 @@
 
 ## Posisi Produk
 
-Modul ini adalah jalur latihan sadar berbasis ruang. Pengguna melihat kondisi area, melakukan jeda napas, mengambil satu tindakan kecil, lalu mencatat perubahan rasa.
+Modul ini membantu pengguna mengevaluasi kondisi area, melakukan jeda singkat, memilih satu tindakan perapian, lalu mencatat hasilnya.
 
 ## Prinsip Desain
 
-- Hawkins: membaca energi reaktif dan mengarahkannya ke tanggung jawab sadar.
-- Tolle: hadir sebelum bereaksi.
-- Atomic Habits: tindakan kecil yang mudah diulang.
-- 5S dan Kaizen: ruang bersih menjadi sistem.
+- observasi kondisi sebelum tindakan
+- jeda singkat sebelum memulai
+- tindakan kecil yang mudah diulang
+- standar area dengan pendekatan 5S dan Kaizen
 
 ## Backlog Tahap 1 - MVP Stabil
 
@@ -23,7 +23,7 @@ Modul ini adalah jalur latihan sadar berbasis ruang. Pengguna melihat kondisi ar
 
 - Tambahkan halaman mode 5S.
 - Buat pilihan area kerja: rumah, gudang, admin, produksi.
-- Buat checklist: pilah, tata, bersihkan, standarkan, rawat.
+- Buat checklist: pilah, tata, bersihkan, standarkan, pelihara.
 - Simpan hasil checklist 5S ke localStorage.
 - Tampilkan nilai 5S per area.
 
@@ -31,14 +31,14 @@ Modul ini adalah jalur latihan sadar berbasis ruang. Pengguna melihat kondisi ar
 
 - Tambahkan card Kesadaran Kebersihan di app-pro.html.
 - Tambahkan tombol dari Home app-pro ke kebersihan-sadar.html.
-- Pertahankan gaya Living Mandala Interface.
+- Pertahankan gaya visual aplikasi.
 
 ## Backlog Tahap 4 - Dashboard Mingguan
 
 - Hitung total sesi per minggu.
 - Hitung area paling sering dipilih.
 - Hitung perubahan skor rata-rata.
-- Tampilkan kalimat refleksi mingguan.
+- Tampilkan ringkasan mingguan.
 
 ## Backlog Tahap 5 - Mode Pabrik
 
@@ -50,8 +50,8 @@ Modul ini adalah jalur latihan sadar berbasis ruang. Pengguna melihat kondisi ar
 
 ## Acceptance Criteria Lanjutan
 
-- Pengguna bisa menjalankan sesi kebersihan sadar kurang dari 3 menit.
+- Pengguna bisa menjalankan sesi kurang dari 3 menit.
 - Pengguna bisa menjalankan checklist 5S kurang dari 5 menit.
 - Semua data awal tetap lokal dan ringan.
-- UI tidak terasa seperti audit atau penghakiman.
+- UI memakai bahasa netral dan tidak menilai pengguna.
 - Modul tetap selaras dengan estetika Naik Sadar.
