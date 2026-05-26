@@ -1,0 +1,66 @@
+{
+  "name": "Naik Sadar Mobile QA Checklist",
+  "version": "15",
+  "purpose": "Cek tampilan dan alur akses Mode Bantuan pada HP sebelum update berikutnya.",
+  "status": "ready_for_manual_test",
+  "pages_to_check": [
+    {
+      "page": "index.html",
+      "expected": "Redirect ke gerbang-10.html?v=15"
+    },
+    {
+      "page": "gerbang-10.html?v=15",
+      "expected": "Menu Mode Bantuan terlihat di bagian Pendukung"
+    },
+    {
+      "page": "app-pro.html?v=15",
+      "expected": "Kartu Mode Bantuan terlihat di Home"
+    },
+    {
+      "page": "app-pro.html?v=15",
+      "expected": "Tombol floating Bantuan terlihat, tidak menutup nav bawah"
+    },
+    {
+      "page": "safety/index.html?v=15",
+      "expected": "Judul Mode Bantuan tampil, tombol kembali ke aplikasi dan gerbang tersedia"
+    }
+  ],
+  "manual_tests": [
+    {
+      "id": "QA-01",
+      "test": "Buka dari halaman utama",
+      "pass_if": "Halaman masuk ke gerbang versi terbaru tanpa tampilan lama"
+    },
+    {
+      "id": "QA-02",
+      "test": "Klik Mode Bantuan dari gerbang",
+      "pass_if": "Masuk ke safety/index.html?v=15"
+    },
+    {
+      "id": "QA-03",
+      "test": "Klik Observasi dan Jeda lalu cari kartu Mode Bantuan",
+      "pass_if": "Kartu terlihat jelas dan bisa diklik"
+    },
+    {
+      "id": "QA-04",
+      "test": "Cek tombol floating Bantuan di beberapa layar app-pro",
+      "pass_if": "Tombol tetap terlihat dan tidak menutup tombol Home/Jeda/Cek/Napas/Catatan"
+    },
+    {
+      "id": "QA-05",
+      "test": "Masuk Mode Bantuan dan klik kembali ke aplikasi",
+      "pass_if": "Kembali ke app-pro.html?v=12 atau versi aplikasi yang aktif"
+    },
+    {
+      "id": "QA-06",
+      "test": "Masukkan input panik/bingung/impulsif ringan",
+      "pass_if": "Aplikasi memberi level risiko dan menampilkan instruksi singkat"
+    }
+  ],
+  "next_action_after_test": [
+    "Jika tombol floating menutup menu bawah, naikkan posisi bottom atau kecilkan padding.",
+    "Jika Mode Bantuan terlalu bawah di gerbang, pindahkan lebih dekat ke Alat Utama.",
+    "Jika halaman lama masih muncul, naikkan query version lagi.",
+    "Jika safety page terasa terlalu teknis, sederhanakan hasil analisis dan sembunyikan log."
+  ]
+}
