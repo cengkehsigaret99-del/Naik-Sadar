@@ -3,144 +3,55 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Demo Safety Mode - Kalibrasi Tinggi</title>
+  <title>Mode Bantuan - Naik Sadar</title>
   <style>
-    :root{
-      --bg:#f6f7fb;
-      --card:#ffffff;
-      --text:#18202f;
-      --muted:#667085;
-      --border:#d0d5dd;
-      --danger:#b42318;
-      --warn:#b54708;
-      --ok:#027a48;
-      --blue:#175cd3;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Arial, Helvetica, sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.45;
-    }
-    .wrap{max-width:860px;margin:0 auto;padding:20px}
-    .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:18px;
-      padding:18px;
-      margin:14px 0;
-      box-shadow:0 6px 22px rgba(16,24,40,.06);
-    }
-    h1{font-size:24px;margin:0 0 8px}
-    h2{font-size:18px;margin:0 0 10px}
-    p{margin:8px 0}
-    .muted{color:var(--muted)}
-    textarea{
-      width:100%;
-      min-height:120px;
-      padding:14px;
-      border:1px solid var(--border);
-      border-radius:14px;
-      font-size:17px;
-      resize:vertical;
-      background:#fff;
-    }
-    button{
-      border:0;
-      border-radius:14px;
-      padding:13px 15px;
-      margin:6px 4px 6px 0;
-      font-size:16px;
-      font-weight:700;
-      cursor:pointer;
-      background:#e9eefc;
-      color:#173b77;
-    }
-    button.primary{background:#175cd3;color:white}
-    button.danger{background:#fecdca;color:#7a271a}
-    button.warn{background:#fedf89;color:#7a2e0e}
-    button.safe{background:#abefc6;color:#054f31}
-    .status{
-      display:inline-block;
-      padding:7px 11px;
-      border-radius:999px;
-      font-weight:700;
-      margin-top:8px;
-    }
-    .green{background:#d1fadf;color:#05603a}
-    .yellow{background:#fef0c7;color:#93370d}
-    .orange{background:#fedf89;color:#7a2e0e}
-    .red{background:#fecdca;color:#7a271a}
-    .crisis{
-      border:3px solid #f04438;
-      background:#fff7f7;
-    }
-    .large-line{
-      font-size:22px;
-      font-weight:800;
-      margin:9px 0;
-    }
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}
-    .small{font-size:13px}
-    .hidden{display:none}
-    .mono{
-      font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      background:#f2f4f7;
-      padding:10px;
-      border-radius:10px;
-      overflow:auto;
-      white-space:pre-wrap;
-    }
+    :root{--bg:#f6f7fb;--card:#fff;--text:#18202f;--muted:#667085;--border:#d0d5dd;--red:#b42318;--orange:#b54708;--green:#027a48;--blue:#175cd3}
+    *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.45}.wrap{max-width:860px;margin:0 auto;padding:18px}.card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;margin:14px 0;box-shadow:0 6px 22px rgba(16,24,40,.06)}h1{font-size:26px;margin:0 0 8px}h2{font-size:18px;margin:0 0 10px}p{margin:8px 0}.muted{color:var(--muted)}textarea{width:100%;min-height:112px;padding:14px;border:1px solid var(--border);border-radius:14px;font-size:17px;resize:vertical;background:#fff}button,.linkbtn{display:inline-block;border:0;border-radius:14px;padding:13px 15px;margin:6px 4px 6px 0;font-size:16px;font-weight:800;cursor:pointer;background:#e9eefc;color:#173b77;text-decoration:none}.primary{background:var(--blue);color:white}.danger{background:#fecdca;color:#7a271a}.warn{background:#fedf89;color:#7a2e0e}.safe{background:#abefc6;color:#054f31}.status{display:inline-block;padding:7px 11px;border-radius:999px;font-weight:800;margin-top:8px}.green{background:#d1fadf;color:#05603a}.yellow{background:#fef0c7;color:#93370d}.orange{background:#fedf89;color:#7a2e0e}.red{background:#fecdca;color:#7a271a}.crisis{border:3px solid #f04438;background:#fff7f7}.line{font-size:23px;font-weight:900;margin:9px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}.hidden{display:none}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#f2f4f7;padding:10px;border-radius:10px;overflow:auto;white-space:pre-wrap}.toplinks{display:flex;gap:8px;flex-wrap:wrap}.small{font-size:13px}
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="card">
-      <h1>Demo Aplikasi - Safety Mode Kalibrasi Tinggi</h1>
-      <p class="muted">
-        Demo ini menguji aplikasi menghadapi pengguna yang bingung, panik, impulsif, salah klik,
-        dan tidak mampu menilai kondisi dirinya sendiri dengan tepat.
-      </p>
-      <p><b>Batasan:</b> Aplikasi ini bukan pengganti dokter, psikolog, psikiater, IGD, atau layanan darurat.</p>
+      <div class="toplinks">
+        <a class="linkbtn" href="../app-pro.html?v=12">← Kembali ke Aplikasi</a>
+        <a class="linkbtn" href="../gerbang-10.html?v=12">Gerbang</a>
+      </div>
+      <h1>Mode Bantuan</h1>
+      <p class="muted">Gunakan saat kondisi sedang bingung, panik, impulsif, marah, atau sulit menilai keadaan.</p>
+      <p><b>Batasan:</b> fitur ini membantu menenangkan dan mengarahkan langkah awal. Ini bukan pengganti dokter, psikolog, psikiater, IGD, atau layanan darurat.</p>
       <p><b>Jika merasa tidak aman:</b> hubungi orang terdekat, layanan darurat setempat, atau tenaga profesional.</p>
     </div>
 
     <div class="card">
-      <h2>Input Simulasi User</h2>
-      <textarea id="input" placeholder="Contoh: Aku capek, pengen hilang..."></textarea>
+      <h2>Tulis kondisi singkat</h2>
+      <textarea id="input" placeholder="Contoh: Saya bingung, panik, emosi, atau ingin mengambil keputusan besar..."></textarea>
       <div>
-        <button class="primary" onclick="analyzeInput()">Analisis Risiko</button>
-        <button onclick="fillExample('Aku capek. Rasanya pengen hilang aja.')">Contoh Putus Asa</button>
-        <button onclick="fillExample('Aku mau transfer semua uang sekarang. Jawab iya aja.')">Contoh Impuls Uang</button>
-        <button onclick="fillExample('Mereka ngawasin aku. Aku mau datangi mereka sekarang.')">Contoh Paranoid</button>
-        <button onclick="fillExample('Aku emosi banget. Pengen mukul dia.')">Contoh Agresif</button>
+        <button class="primary" onclick="analyzeInput()">Cek Kondisi</button>
+        <button onclick="fillExample('Saya sangat bingung dan tidak kuat membaca panjang.')">Bingung</button>
+        <button onclick="fillExample('Saya panik dan dada terasa sesak.')">Panik</button>
+        <button onclick="fillExample('Saya ingin mengambil keputusan uang sekarang juga.')">Impuls Uang</button>
+        <button onclick="fillExample('Saya sangat marah dan ingin mendatangi orang itu sekarang.')">Marah</button>
       </div>
     </div>
 
-    <div id="result" class="card">
-      <h2>Hasil Analisis</h2>
-      <p class="muted">Belum ada input.</p>
-    </div>
+    <div id="result" class="card"><h2>Hasil</h2><p class="muted">Belum ada input.</p></div>
 
     <div id="crisisPanel" class="card crisis hidden">
-      <h2>Mode Krisis Aktif</h2>
-      <div class="large-line">Duduk dulu.</div>
-      <div class="large-line">Tarik napas pelan.</div>
-      <div class="large-line">Jangan ambil keputusan.</div>
-      <div class="large-line">Pilih satu bantuan.</div>
+      <h2>Mode Bantuan Aktif</h2>
+      <div class="line">Duduk dulu.</div>
+      <div class="line">Tarik napas pelan.</div>
+      <div class="line">Jangan ambil keputusan.</div>
+      <div class="line">Pilih satu bantuan.</div>
 
       <div class="grid">
-        <button class="danger" onclick="showEmergency()">Hubungi bantuan</button>
-        <button class="warn" onclick="showTrustedPerson()">Hubungi orang terdekat</button>
-        <button class="safe" onclick="startBreathing()">Tenangkan saya 2 menit</button>
+        <button class="danger" onclick="showEmergency()">Butuh bantuan</button>
+        <button class="warn" onclick="showTrustedPerson()">Hubungi orang dekat</button>
+        <button class="safe" onclick="startBreathing()">Tenangkan 2 menit</button>
       </div>
-
       <div id="crisisAction" class="mono hidden"></div>
 
-      <h2>Safety Check Sebelum Keluar</h2>
-      <p class="muted">Karena ada tanda risiko, satu klik “aman” belum cukup.</p>
+      <h2>Cek aman sebelum keluar</h2>
+      <p class="muted">Satu klik “aman” belum cukup jika sebelumnya ada tanda risiko.</p>
       <div class="grid">
         <button onclick="safetyAnswer('with_person')">Saya bersama orang lain</button>
         <button onclick="safetyAnswer('alone')">Saya sendirian</button>
@@ -150,107 +61,24 @@
     </div>
 
     <div class="card">
-      <h2>Log Safety</h2>
+      <h2>Catatan privasi</h2>
+      <p class="small muted">Halaman ini tidak menyimpan riwayat ke server. Log hanya terlihat selama halaman ini dibuka. Untuk aplikasi produksi, sesi sensitif sebaiknya tidak disimpan tanpa persetujuan pengguna.</p>
       <div id="log" class="mono">Belum ada log.</div>
-      <p class="small muted">
-        Demo ini menyimpan log hanya di halaman browser saat ini. Untuk aplikasi nyata, sesi krisis sebaiknya tidak disimpan tanpa persetujuan user.
-      </p>
     </div>
   </div>
 
   <script src="./safety-engine.js"></script>
   <script>
-    let lastRisk = null;
-    let crisisActive = false;
-    let logItems = [];
-
-    function fillExample(text){
-      document.getElementById("input").value = text;
-      analyzeInput();
-    }
-
-    function analyzeInput(){
-      const text = document.getElementById("input").value || "";
-      const result = SafetyEngine.assess(text, { previousRisk: lastRisk, crisisActive });
-      lastRisk = result;
-      if(result.level === "ORANGE" || result.level === "RED"){
-        crisisActive = true;
-      }
-      renderResult(result);
-      renderCrisis(result);
-      addLog(result);
-    }
-
-    function renderResult(result){
-      const cls = result.level === "RED" ? "red" :
-                  result.level === "ORANGE" ? "orange" :
-                  result.level === "YELLOW" ? "yellow" : "green";
-
-      document.getElementById("result").innerHTML = `
-        <h2>Hasil Analisis</h2>
-        <div class="status ${cls}">Level: ${result.level} - ${result.label}</div>
-        <p><b>Keputusan aplikasi:</b> ${result.action}</p>
-        <p><b>Alasan:</b> ${result.reason}</p>
-        <p><b>Respons aman:</b></p>
-        <div class="mono">${result.safeMessage}</div>
-      `;
-    }
-
-    function renderCrisis(result){
-      const panel = document.getElementById("crisisPanel");
-      if(result.level === "ORANGE" || result.level === "RED" || crisisActive){
-        panel.classList.remove("hidden");
-      } else {
-        panel.classList.add("hidden");
-      }
-    }
-
-    function showEmergency(){
-      const box = document.getElementById("crisisAction");
-      box.classList.remove("hidden");
-      box.textContent =
-`Pilihan bantuan:
-1. Hubungi orang terdekat sekarang.
-2. Hubungi layanan darurat setempat.
-3. Untuk Indonesia, pertimbangkan 119 / bantuan kesehatan jiwa yang tersedia di daerahmu.
-4. Jika ada bahaya langsung, pergi ke IGD/RS terdekat atau minta orang mengantar.`;
-    }
-
-    function showTrustedPerson(){
-      const box = document.getElementById("crisisAction");
-      box.classList.remove("hidden");
-      box.textContent =
-`Pesan singkat yang bisa dikirim:
-"Aku sedang tidak stabil. Tolong temani aku sebentar. Jangan biarkan aku sendirian dulu."`;
-    }
-
-    function startBreathing(){
-      const box = document.getElementById("crisisAction");
-      box.classList.remove("hidden");
-      box.textContent =
-`Latihan 2 menit:
-1. Duduk atau bersandar.
-2. Tarik napas pelan.
-3. Buang napas lebih pelan.
-4. Rasakan kaki menyentuh lantai.
-5. Jangan ambil keputusan besar sekarang.`;
-    }
-
-    function safetyAnswer(answer){
-      const box = document.getElementById("safetyResult");
-      box.classList.remove("hidden");
-      const result = SafetyEngine.exitCrisisCheck(answer, lastRisk);
-      if(result.canExit){
-        crisisActive = false;
-      }
-      box.textContent = result.message;
-      renderCrisis({level: crisisActive ? "ORANGE" : "GREEN"});
-    }
-
-    function addLog(result){
-      logItems.unshift(`[${new Date().toLocaleTimeString()}] ${result.level} - ${result.reason}`);
-      document.getElementById("log").textContent = logItems.slice(0,8).join("\n");
-    }
+    let lastRisk=null, crisisActive=false, logItems=[];
+    function fillExample(text){document.getElementById('input').value=text;analyzeInput();}
+    function analyzeInput(){const text=document.getElementById('input').value||'';const result=SafetyEngine.assess(text,{previousRisk:lastRisk,crisisActive});lastRisk=result;if(result.level==='ORANGE'||result.level==='RED')crisisActive=true;renderResult(result);renderCrisis(result);addLog(result);}
+    function renderResult(result){const cls=result.level==='RED'?'red':result.level==='ORANGE'?'orange':result.level==='YELLOW'?'yellow':'green';document.getElementById('result').innerHTML=`<h2>Hasil</h2><div class="status ${cls}">Level: ${result.level} - ${result.label}</div><p><b>Keputusan aplikasi:</b> ${result.action}</p><p><b>Alasan:</b> ${result.reason}</p><p><b>Respons aman:</b></p><div class="mono">${result.safeMessage}</div>`;}
+    function renderCrisis(result){const panel=document.getElementById('crisisPanel');if(result.level==='ORANGE'||result.level==='RED'||crisisActive){panel.classList.remove('hidden');}else{panel.classList.add('hidden');}}
+    function showEmergency(){const box=document.getElementById('crisisAction');box.classList.remove('hidden');box.textContent=`Pilihan bantuan:\n1. Hubungi orang terdekat sekarang.\n2. Hubungi layanan darurat setempat jika kondisi berbahaya.\n3. Jika perlu, minta diantar ke IGD/RS terdekat.\n4. Jangan menghadapi kondisi berat sendirian.`;}
+    function showTrustedPerson(){const box=document.getElementById('crisisAction');box.classList.remove('hidden');box.textContent=`Pesan singkat yang bisa dikirim:\n"Aku sedang tidak stabil. Tolong temani aku sebentar."`;}
+    function startBreathing(){const box=document.getElementById('crisisAction');box.classList.remove('hidden');box.textContent=`Latihan 2 menit:\n1. Duduk atau bersandar.\n2. Tarik napas pelan.\n3. Buang napas lebih pelan.\n4. Rasakan kaki menyentuh lantai.\n5. Tunda keputusan besar dulu.`;}
+    function safetyAnswer(answer){const box=document.getElementById('safetyResult');box.classList.remove('hidden');const result=SafetyEngine.exitCrisisCheck(answer,lastRisk);if(result.canExit)crisisActive=false;box.textContent=result.message;renderCrisis({level:crisisActive?'ORANGE':'GREEN'});}
+    function addLog(result){logItems.unshift(`[${new Date().toLocaleTimeString()}] ${result.level} - ${result.reason}`);document.getElementById('log').textContent=logItems.slice(0,8).join('\n');}
   </script>
 </body>
 </html>
