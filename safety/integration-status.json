@@ -2,7 +2,7 @@
   "project": "Naik Sadar",
   "safety_version": "15",
   "status": "active_integrated",
-  "last_update_focus": "Mode Bantuan access and QA control",
+  "last_update_focus": "Mode Bantuan access expanded to core modules",
   "completed": [
     {
       "item": "Safety engine added",
@@ -38,23 +38,28 @@
       "item": "Mobile QA checklist saved",
       "file": "safety/mobile-qa-checklist.json",
       "status": "done"
+    },
+    {
+      "item": "Cleanliness module safe wrapper added",
+      "file": "kebersihan-sadar-safe.html",
+      "status": "done"
+    },
+    {
+      "item": "5S module safe wrapper added",
+      "file": "kebersihan-5s-safe.html",
+      "status": "done"
+    },
+    {
+      "item": "Gateway routed to safe wrappers for Kerapian and 5S",
+      "file": "gerbang-10.html",
+      "status": "done"
     }
   ],
   "pending": [
     {
       "item": "Manual mobile screenshot check",
-      "reason": "Need to confirm floating help button does not cover bottom navigation",
+      "reason": "Need to confirm floating help buttons do not cover bottom navigation in app-pro, Kerapian wrapper, and 5S wrapper",
       "priority": "high"
-    },
-    {
-      "item": "Add help shortcut to cleanliness module",
-      "file": "kebersihan-sadar.html",
-      "priority": "medium"
-    },
-    {
-      "item": "Add help shortcut to 5S module",
-      "file": "kebersihan-5s.html",
-      "priority": "medium"
     },
     {
       "item": "Simplify safety result view if user feels page too technical",
@@ -65,9 +70,19 @@
       "item": "Review privacy wording before public positioning",
       "file": "safety/index.html",
       "priority": "medium"
+    },
+    {
+      "item": "Optional: add safe wrapper for Latihan Singkat",
+      "file": "latihan-pro.html",
+      "priority": "low"
+    },
+    {
+      "item": "Optional: add safe wrapper for Versi Lengkap",
+      "file": "naik-sadar-2.html",
+      "priority": "low"
     }
   ],
-  "recommended_next_step": "Open the app on mobile, capture screenshots of gerbang, app home, floating help button, and Mode Bantuan page. Then adjust UI position if needed.",
+  "recommended_next_step": "Open the app on mobile, capture screenshots of gerbang, app home, Kerapian wrapper, 5S wrapper, floating help button, and Mode Bantuan page. Then adjust button position if needed.",
   "score": {
     "current_design_score": 98,
     "target_after_visual_qa": 99,
