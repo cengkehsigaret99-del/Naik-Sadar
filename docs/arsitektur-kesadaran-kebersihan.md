@@ -7,50 +7,51 @@ Repo Naik Sadar saat ini memakai static HTML.
 File utama:
 - index.html mengarah ke gerbang-10.html.
 - gerbang-10.html menjadi gerbang utama.
-- app-pro.html berisi aplikasi inti pro dengan screen Home, Rasa, Cermin, Napas, Kompas, dan Jejak.
+- app-pro.html berisi aplikasi inti.
 
 ## Strategi Integrasi
 
-Modul Kesadaran Kebersihan sebaiknya dibuat sebagai halaman HTML baru terlebih dahulu:
+Modul Kesadaran Kebersihan dibuat sebagai halaman HTML mandiri:
 
 - kebersihan-sadar.html
+- kebersihan-5s.html
 
-Setelah stabil, link modul ditambahkan ke:
+Setelah stabil, link modul dapat ditambahkan ke:
 
 - gerbang-10.html
 - app-pro.html bagian Home
-- nav jika diperlukan
+- navigasi tambahan jika diperlukan
 
 ## Prinsip Programmer-Designer
 
-Modul harus mempertahankan karakter Naik Sadar:
+Modul harus mempertahankan karakter aplikasi:
 
 - static ringan
 - mobile first
 - localStorage untuk data awal
 - tidak perlu backend pada MVP
-- visual lembut
+- visual bersih dan sederhana
 - alur singkat
 - tidak banyak input dalam satu layar
 
-## Kolaborasi Pemikiran
+## Kerangka Desain
 
-Desain modul memakai inspirasi dari:
+Desain modul memakai beberapa lensa:
 
-- Hawkins: dari reaktif menuju sadar dan bertanggung jawab.
-- Tolle: hadir sebelum bertindak.
-- Atomic Habits: tindakan kecil yang diulang.
-- 5S dan Kaizen: tata ruang menjadi sistem.
+- observasi kondisi sebelum tindakan
+- jeda singkat sebelum pengguna memulai
+- tindakan kecil yang dapat diulang
+- standar area dengan pendekatan 5S dan Kaizen
 
 ## Struktur Layar Modul
 
 1. Home Kebersihan
 2. Pilih Area
 3. Cek Kondisi Awal
-4. Napas Sebelum Bergerak
+4. Jeda Napas
 5. Pilih Tindakan Kecil
-6. Refleksi Setelah
-7. Riwayat Jejak Kebersihan
+6. Evaluasi Setelah
+7. Riwayat Sesi
 
 ## Penyimpanan Data
 
@@ -66,7 +67,7 @@ Struktur item:
 - scoreBefore
 - action
 - scoreAfter
-- feelingAfter
+- resultAfter
 - note
 
 ## Integrasi Dashboard
@@ -81,9 +82,8 @@ Dashboard awal menampilkan:
 
 ## File Implementasi Awal
 
-Rencana file:
-
 - kebersihan-sadar.html
+- kebersihan-5s.html
 - docs/konsep-kesadaran-kebersihan.md
 - docs/ux-kesadaran-kebersihan-mvp.md
 - docs/ui-kesadaran-kebersihan.md
