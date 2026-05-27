@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Riwayat Pola | Naik-Sadar</title>
+  <link rel="stylesheet" href="assets/nusantara-theme.css">
+  <style>
+    body{margin:0;min-height:100vh;padding:18px;font-family:system-ui,sans-serif}
+    main{max-width:560px;margin:0 auto;padding:10px 0 32px}
+    .card{border-radius:28px;padding:22px;margin:12px 0}
+    .tag{font-size:12px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;opacity:.8}
+    h1{font-family:Georgia,serif;font-size:38px;line-height:1.05;margin:8px 0}
+    h2{font-size:16px;margin:20px 0 10px}
+    p{font-size:16px;line-height:1.55}.muted{opacity:.78}.small{font-size:13px}
+    .topnav{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.topnav a,.btn{font-size:13px;text-decoration:none;border-radius:999px;padding:9px 11px;background:rgba(255,250,242,.78);font-weight:900;color:inherit;border:0;cursor:pointer}
+    .summary{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.box{border-radius:18px;padding:14px;background:rgba(255,250,242,.72)}.box b{font-size:24px;font-family:Georgia,serif;display:block}.box span{font-size:13px;opacity:.82}
+    .list{display:grid;gap:10px}.item{border-radius:18px;padding:14px;background:rgba(255,250,242,.72)}.item b{display:block}.item small{opacity:.72}.bar{height:10px;border-radius:999px;background:rgba(92,53,25,.16);overflow:hidden;margin-top:8px}.fill{height:100%;border-radius:999px;background:#9b2f20;width:0%}.entry{border-left:6px solid #d8a84f;border-radius:16px;padding:13px;background:rgba(255,250,242,.7)}.entry p{margin:6px 0;font-size:14px}.empty{border-radius:18px;padding:16px;background:rgba(255,250,242,.72)}
+    @media(max-width:420px){h1{font-size:34px}.summary{grid-template-columns:1fr}.card{padding:19px}}
+  </style>
+</head>
+<body>
+<main>
+  <div class="topnav"><a href="gerbang-17.html?v=18">← Gerbang</a><a href="mode-jeda-cepat.html?v=18">Mode Jeda Cepat</a><button class="btn" id="clearBtn">Hapus Riwayat</button></div>
+
+  <section class="card">
+    <div class="tag">Riwayat Pola</div>
+    <h1>Lihat pola diri 7 hari terakhir.</h1>
+    <p class="muted">Riwayat ini hanya membaca catatan jeda yang tersimpan di perangkatmu. Tujuannya bukan menilai diri, tapi melihat pola agar langkah berikutnya lebih sadar.</p>
+    <div class="summary">
+      <div class="box"><b id="total7">0</b><span>catatan 7 hari</span></div>
+      <div class="box"><b id="totalAll">0</b><span>total catatan tersimpan</span></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Kondisi yang paling sering muncul</h2>
+    <div class="list" id="kondisiList"></div>
+  </section>
+
+  <section class="card">
+    <h2>Catatan terakhir</h2>
+    <div class="list" id="entryList"></div>
+  </section>
+
+  <section class="card">
+    <div class="tag">Arah Praktis</div>
+    <p id="arahText" class="muted">Belum ada pola yang cukup untuk dibaca. Gunakan Mode Jeda Cepat beberapa kali saat emosi naik.</p>
+  </section>
+</main>
+<script>
+  const key='naikSadarJedaLog';
+  const data=JSON.parse(localStorage.getItem(key)||'[]').filter(Boolean);
+  const now=Date.now();
+  const seven=7*24*60*60*1000;
+  const recent=data.filter(x=>x.tanggal && (now-new Date(x.tanggal).getTime())<=seven);
+  document.getElementById('total7').textContent=recent.length;
+  document.getElementById('totalAll').textContent=data.length;
+
+  function countBy(arr,field){return arr.reduce((acc,x)=>{const v=(x[field]||'belum diisi').trim()||'belum diisi';acc[v]=(acc[v]||0)+1;return acc;},{});}
+  function renderBars(){
+    const host=document.getElementById('kondisiList'); host.innerHTML='';
+    if(!recent.length){host.innerHTML='<div class="empty">Belum ada catatan dalam 7 hari terakhir.</div>'; return;}
+    const counts=countBy(recent,'kondisi');
+    const rows=Object.entries(counts).sort((a,b)=>b[1]-a[1]);
+    const max=rows[0][1]||1;
+    rows.forEach(([name,n])=>{
+      const div=document.createElement('div'); div.className='item';
+      div.innerHTML='<b>'+escapeHtml(name)+'</b><small>'+n+' kali muncul</small><div class="bar"><div class="fill" style="width:'+Math.round(n/max*100)+'%"></div></div>';
+      host.appendChild(div);
+    });
+  }
+  function renderEntries(){
+    const host=document.getElementById('entryList'); host.innerHTML='';
+    if(!data.length){host.innerHTML='<div class="empty">Belum ada riwayat. Mulai dari Mode Jeda Cepat.</div>'; return;}
+    data.slice(0,8).forEach(x=>{
+      const d=x.tanggal?new Date(x.tanggal):null;
+      const div=document.createElement('div'); div.className='entry';
+      div.innerHTML='<small>'+escapeHtml(d?d.toLocaleString('id-ID'):'tanpa tanggal')+'</small><p><b>'+escapeHtml(x.kondisi||'kondisi belum diisi')+'</b></p><p>Fakta: '+escapeHtml(x.fakta||'-')+'</p><p>Rasa: '+escapeHtml(x.rasa||'-')+'</p><p>Respons sadar: '+escapeHtml(x.respons||'-')+'</p>';
+      host.appendChild(div);
+    });
+  }
+  function renderArah(){
+    const el=document.getElementById('arahText');
+    if(!recent.length){return;}
+    const rows=Object.entries(countBy(recent,'kondisi')).sort((a,b)=>b[1]-a[1]);
+    const top=rows[0][0];
+    el.textContent='Pola yang paling terlihat minggu ini: '+top+'. Saat kondisi ini muncul lagi, buka Mode Jeda Cepat sebelum merespons. Mulai dari diam sebentar, napas pelan, tulis fakta, lalu pilih satu langkah aman.';
+  }
+  function escapeHtml(str){return String(str).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+  document.getElementById('clearBtn').addEventListener('click',()=>{
+    if(confirm('Hapus semua riwayat jeda di perangkat ini?')){localStorage.removeItem(key); location.reload();}
+  });
+  renderBars(); renderEntries(); renderArah();
+</script>
+<script src="assets/nusantara-theme-toggle.js"></script>
+<script src="assets/nusantara-audio.js"></script>
+</body>
+</html>
