@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Naik-Sadar</title>
-  <link rel="stylesheet" href="assets/nusantara-theme.css">
+  <link rel="stylesheet" href="assets/nusantara-theme.css?v=22">
   <style>
     html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#f6efe4;font-family:system-ui,sans-serif}
     #nsFrame{position:fixed;inset:0;width:100%;height:100%;border:0;background:transparent}
@@ -13,16 +13,10 @@
   </style>
 </head>
 <body>
-  <iframe id="nsFrame" title="Naik-Sadar" src="gerbang-17.html?v=21"></iframe>
+  <iframe id="nsFrame" title="Naik-Sadar" src="gerbang-17.html?v=22"></iframe>
   <div class="shellHint">Mode musik tetap aktif</div>
   <script>
     const frame=document.getElementById('nsFrame');
-    function cleanPath(url){
-      try{
-        const u=new URL(url,location.href);
-        return u.pathname.split('/').pop()+(u.search||'');
-      }catch(e){return 'gerbang-17.html?v=21'}
-    }
     function loadFromHash(){
       const target=decodeURIComponent((location.hash||'').replace(/^#/,''));
       if(target && target.endsWith('.html')) frame.src=target;
@@ -30,6 +24,6 @@
     window.addEventListener('hashchange',loadFromHash);
     loadFromHash();
   </script>
-  <script src="assets/nusantara-audio.js?v=21"></script>
+  <script src="assets/nusantara-audio.js?v=22"></script>
 </body>
 </html>
