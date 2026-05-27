@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Template Respons Tenang | Naik-Sadar</title>
+  <link rel="stylesheet" href="assets/nusantara-theme.css">
+  <style>
+    body{margin:0;min-height:100vh;padding:18px;font-family:system-ui,sans-serif}
+    main{max-width:560px;margin:0 auto;padding:10px 0 32px}
+    .card{border-radius:28px;padding:22px;margin:12px 0}
+    .tag{font-size:12px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;opacity:.8}
+    h1{font-family:Georgia,serif;font-size:38px;line-height:1.05;margin:8px 0}
+    h2{font-size:16px;margin:20px 0 10px}
+    p{font-size:16px;line-height:1.55}.muted{opacity:.78}.small{font-size:13px}
+    .topnav{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.topnav a{font-size:13px;text-decoration:none;border-radius:999px;padding:9px 11px;background:rgba(255,250,242,.78);font-weight:900;color:inherit}
+    .pill,.btn{display:block;width:100%;box-sizing:border-box;text-align:left;border:0;border-radius:16px;padding:14px 15px;margin:9px 0;font-weight:900;color:inherit;text-decoration:none;font-size:15px;cursor:pointer;background:rgba(255,250,242,.72)}
+    .pill span,.btn span{display:block;font-weight:700;font-size:13px;line-height:1.35;margin-top:4px;opacity:.82}.primary{background:#9b2f20!important;color:#fff!important}.dark{background:#24170f!important;color:#fff!important}
+    textarea{width:100%;box-sizing:border-box;border-radius:14px;border:1px solid rgba(92,53,25,.22);padding:12px;font:inherit;background:rgba(255,250,242,.82);color:inherit;min-height:86px}label{display:block;font-weight:900;margin-top:12px;margin-bottom:6px}.hidden{display:none}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.template{border-left:6px solid #d8a84f;border-radius:16px;padding:13px;background:rgba(255,250,242,.7);margin-top:10px}.template h3{margin:0 0 8px;font-size:15px}.template p{margin:0;font-size:15px}.copy{margin-top:10px;border-radius:999px;padding:9px 12px;border:0;font-weight:900;background:rgba(36,23,15,.12);color:inherit;cursor:pointer}.result{border-radius:16px;padding:12px;margin-top:12px;background:rgba(255,250,242,.7);font-weight:800}
+    @media(max-width:420px){h1{font-size:34px}.row{grid-template-columns:1fr}.card{padding:19px}}
+  </style>
+</head>
+<body>
+<main>
+  <div class="topnav"><a href="gerbang-17.html?v=18">← Gerbang</a><a href="mode-jeda-cepat.html?v=18">Mode Jeda Cepat</a><a href="riwayat-pola.html?v=18">Riwayat Pola</a></div>
+
+  <section class="card" id="start">
+    <div class="tag">Template Respons Tenang</div>
+    <h1>Ubah dorongan membalas menjadi respons yang jernih.</h1>
+    <p class="muted">Pilih situasi yang paling dekat. Aplikasi akan memberi 3 gaya respons: halus, tegas, dan sangat singkat. Sesuaikan lagi sebelum dikirim.</p>
+    <h2>Situasi komunikasi</h2>
+    <button class="pill primary" data-situasi="ditekan">Saya sedang ditekan atau didesak<span>Untuk pesan yang membuat ingin buru-buru menjawab.</span></button>
+    <button class="pill" data-situasi="tersinggung">Saya tersinggung<span>Untuk rasa tidak dihargai, disalahkan, atau dipancing.</span></button>
+    <button class="pill" data-situasi="minta_data">Saya perlu minta data dulu<span>Untuk jawaban yang butuh dasar sebelum keputusan.</span></button>
+    <button class="pill" data-situasi="menolak">Saya perlu menolak dengan sopan<span>Untuk permintaan yang belum aman atau belum bisa dipenuhi.</span></button>
+    <button class="pill" data-situasi="minta_waktu">Saya perlu minta waktu<span>Untuk menunda respons tanpa terlihat menghindar.</span></button>
+    <button class="pill" data-situasi="klarifikasi">Saya perlu klarifikasi<span>Untuk menghindari salah paham dan asumsi.</span></button>
+  </section>
+
+  <section class="card hidden" id="builder">
+    <div class="tag">Susun Respons</div>
+    <h1 id="judulSituasi">Respons tenang.</h1>
+    <label>Catatan konteks singkat</label>
+    <textarea id="context" placeholder="Tulis singkat: siapa, masalahnya apa, dan apa tujuan balasanmu. Catatan ini tidak wajib."></textarea>
+    <div class="row">
+      <button class="btn dark" id="makeBtn">Buat Template</button>
+      <button class="btn" id="resetBtn">Pilih Ulang</button>
+    </div>
+    <div id="templates"></div>
+    <div class="result hidden" id="copyBox">Teks sudah disalin. Baca ulang sebentar sebelum dikirim.</div>
+  </section>
+
+  <section class="card">
+    <div class="tag">Pengingat</div>
+    <p class="small muted">Jangan kirim pesan saat tubuh masih panas. Pakai template sebagai dasar, lalu sesuaikan dengan fakta dan kebutuhan.</p>
+  </section>
+</main>
+<script>
+  let situasi='';
+  const start=document.getElementById('start');
+  const builder=document.getElementById('builder');
+  const judul=document.getElementById('judulSituasi');
+  const templates=document.getElementById('templates');
+  const copyBox=document.getElementById('copyBox');
+  const data={
+    ditekan:{judul:'Saya sedang ditekan atau didesak.',halus:'Baik, saya pahami dulu. Saya cek kondisinya agar jawaban saya tidak keliru. Nanti saya kabari setelah datanya lebih jelas.',tegas:'Saya akan bantu jawab, tapi saya perlu cek data dulu supaya keputusan tidak tergesa-gesa dan tidak menimbulkan salah paham.',singkat:'Siap, saya cek dulu datanya.'},
+    tersinggung:{judul:'Saya sedang tersinggung.',halus:'Saya tangkap maksudnya. Biar tidak salah paham, saya tenangkan dulu dan saya jawab berdasarkan fakta yang jelas.',tegas:'Saya siap membahas ini, tapi saya ingin komunikasinya tetap berdasarkan data dan tidak saling menyudutkan.',singkat:'Baik, saya pahami. Saya cek dulu faktanya.'},
+    minta_data:{judul:'Saya perlu minta data dulu.',halus:'Bisa dibantu kirim data pendukungnya dulu? Setelah itu saya bisa cek dan memberi jawaban yang lebih tepat.',tegas:'Agar tidak salah keputusan, saya perlu data lengkap dulu sebelum menyimpulkan atau menjalankan langkah berikutnya.',singkat:'Tolong kirim datanya dulu ya.'},
+    menolak:{judul:'Saya perlu menolak dengan sopan.',halus:'Untuk saat ini saya belum bisa menyanggupi. Saya perlu menjaga agar langkahnya tetap aman dan tidak menimbulkan masalah baru.',tegas:'Saat ini belum bisa saya setujui karena dasar dan kondisinya belum cukup aman. Kita cek lagi setelah datanya lebih jelas.',singkat:'Maaf, untuk saat ini belum bisa.'},
+    minta_waktu:{judul:'Saya perlu minta waktu.',halus:'Saya butuh waktu sebentar untuk cek dan menimbang dengan lebih jernih. Nanti saya kabari setelah posisinya lebih jelas.',tegas:'Saya belum bisa jawab sekarang. Saya perlu cek dulu supaya responsnya tepat dan tidak tergesa-gesa.',singkat:'Saya cek dulu, nanti saya kabari.'},
+    klarifikasi:{judul:'Saya perlu klarifikasi.',halus:'Biar saya tidak salah menangkap, boleh dijelaskan bagian mana yang perlu saya tindak lanjuti dulu?',tegas:'Saya perlu klarifikasi dulu supaya tidak ada salah paham. Mohon jelaskan poin utamanya dan data pendukungnya.',singkat:'Boleh diperjelas dulu poin utamanya?'}
+  };
+  document.querySelectorAll('[data-situasi]').forEach(btn=>btn.addEventListener('click',()=>{
+    situasi=btn.dataset.situasi; judul.textContent=data[situasi].judul; start.classList.add('hidden'); builder.classList.remove('hidden'); templates.innerHTML=''; copyBox.classList.add('hidden'); window.scrollTo({top:0,behavior:'smooth'});
+  }));
+  document.getElementById('resetBtn').addEventListener('click',()=>{situasi=''; document.getElementById('context').value=''; templates.innerHTML=''; copyBox.classList.add('hidden'); builder.classList.add('hidden'); start.classList.remove('hidden'); window.scrollTo({top:0,behavior:'smooth'});});
+  document.getElementById('makeBtn').addEventListener('click',()=>{if(!situasi)return; renderTemplates(data[situasi]);});
+  function renderTemplates(pack){
+    templates.innerHTML=''; copyBox.classList.add('hidden');
+    [['Halus',pack.halus],['Tegas',pack.tegas],['Sangat singkat',pack.singkat]].forEach(([label,text])=>{
+      const div=document.createElement('div'); div.className='template';
+      div.innerHTML='<h3>'+escapeHtml(label)+'</h3><p>'+escapeHtml(text)+'</p><button class="copy" type="button">Salin teks</button>';
+      div.querySelector('button').addEventListener('click',()=>copyText(text));
+      templates.appendChild(div);
+    });
+  }
+  function copyText(text){
+    if(navigator.clipboard){navigator.clipboard.writeText(text).then(()=>copyBox.classList.remove('hidden')).catch(()=>fallbackCopy(text));}
+    else{fallbackCopy(text);}
+  }
+  function fallbackCopy(text){const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);copyBox.classList.remove('hidden');}
+  function escapeHtml(str){return String(str).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+</script>
+<script src="assets/nusantara-theme-toggle.js"></script>
+<script src="assets/nusantara-audio.js"></script>
+</body>
+</html>
