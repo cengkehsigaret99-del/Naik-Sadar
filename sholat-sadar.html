@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Sholat Sadar | Naik-Sadar</title>
-  <link rel="stylesheet" href="assets/nusantara-theme.css">
+  <link rel="stylesheet" href="assets/nusantara-theme.css?v=23">
   <style>
     body{margin:0;min-height:100vh;padding:18px;font-family:system-ui,sans-serif}
     main{max-width:620px;margin:0 auto;padding:10px 0 34px}.card{border-radius:28px;padding:22px;margin:12px 0}.tag{font-size:12px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;opacity:.8}
@@ -16,7 +16,7 @@
 </head>
 <body>
 <main>
-  <div class="topnav"><a href="gerbang-17.html?v=22">← Beranda</a><a href="peta-alur.html?v=22">Peta Alur</a><a href="perluas-sudut-pandang.html?v=22">Sudut Pandang</a></div>
+  <div class="topnav"><a href="gerbang-17.html?v=23">← Beranda</a><a href="peta-alur.html?v=23">Peta Alur</a><a href="perluas-sudut-pandang.html?v=23">Sudut Pandang</a></div>
 
   <section class="card">
     <div class="tag">Sholat Sadar</div>
@@ -55,8 +55,11 @@
     <input id="score" type="range" min="1" max="10" value="5">
     <h2>Satu langkah sadar setelah salam</h2>
     <textarea id="langkah" rows="3" placeholder="Contoh: tidak balas pesan dulu, cek data, minta maaf, diam 10 menit, lanjut kerja kecil."></textarea>
-    <div class="row"><button class="btn dark" id="saveBtn">Simpan Sholat Sadar</button><a class="btn" href="satu-langkah-hari-ini.html?v=22">Ambil Satu Langkah</a></div>
+    <div class="row"><button class="btn dark" id="saveBtn">Simpan Sholat Sadar</button><a class="btn" href="satu-langkah-hari-ini.html?v=23">Ambil Satu Langkah</a></div>
     <div class="status hidden" id="savedBox">Catatan Sholat Sadar tersimpan di perangkat ini.</div>
+    <h2>Lanjut ke...</h2>
+    <a class="btn primary" href="riwayat-pola.html?v=23">Lihat Riwayat Pola<span>Lihat catatan Sholat Sadar dan pola lainnya.</span></a>
+    <a class="btn" href="perluas-sudut-pandang.html?v=23">Perluas Sudut Pandang<span>Pahami hubungan ibadah, tubuh, emosi, dan kebiasaan.</span></a>
   </section>
 </main>
 <script>
@@ -72,7 +75,7 @@
     localStorage.setItem(key,JSON.stringify(old.slice(0,50))); document.getElementById('savedBox').classList.remove('hidden');
   });
 </script>
-<script src="assets/nusantara-theme-toggle.js?v=22"></script>
-<script src="assets/nusantara-audio.js?v=22"></script>
+<script src="assets/nusantara-theme-toggle.js?v=23"></script>
+<script src="assets/nusantara-audio.js?v=23"></script>
 </body>
 </html>
