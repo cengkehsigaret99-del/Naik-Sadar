@@ -1,131 +1,23 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Mode Jeda Cepat | Naik-Sadar</title>
-  <link rel="stylesheet" href="assets/nusantara-theme.css">
+  <link rel="stylesheet" href="assets/nusantara-theme.css?v=22">
   <style>
-    body{margin:0;min-height:100vh;padding:18px;font-family:system-ui,sans-serif}
-    main{max-width:520px;margin:0 auto;padding:10px 0 28px}
-    .card{border-radius:28px;padding:22px;margin:12px 0}
-    .tag{font-size:12px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;opacity:.8}
-    h1{font-family:Georgia,serif;font-size:38px;line-height:1.05;margin:8px 0}
-    h2{font-size:16px;margin:20px 0 10px}
-    p{font-size:16px;line-height:1.55}.muted{opacity:.78}.small{font-size:13px}
-    .btn,.pill{display:block;width:100%;box-sizing:border-box;text-align:left;border:0;border-radius:16px;padding:14px 15px;margin:9px 0;font-weight:900;color:inherit;text-decoration:none;font-size:15px;cursor:pointer;background:rgba(255,250,242,.72)}
-    .btn span,.pill span{display:block;font-weight:700;font-size:13px;line-height:1.35;margin-top:4px;opacity:.82}
-    .primary{background:#9b2f20!important;color:#fff!important}.dark{background:#24170f!important;color:#fff!important}
-    .steps{display:grid;gap:10px;margin-top:12px}.step{border-radius:16px;padding:13px;background:rgba(255,250,242,.68)}.step b{font-family:Georgia,serif}
-    textarea,input,select{width:100%;box-sizing:border-box;border-radius:14px;border:1px solid rgba(92,53,25,.22);padding:12px;font:inherit;background:rgba(255,250,242,.82);color:inherit}
-    input[type="range"]{padding:0;border:0;background:transparent;accent-color:#9b2f20}
-    label{display:block;font-weight:900;margin-top:12px;margin-bottom:6px}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.hidden{display:none}.topnav{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.topnav a{font-size:13px;text-decoration:none;border-radius:999px;padding:9px 11px;background:rgba(255,250,242,.78);font-weight:900;color:inherit}.result{border-left:6px solid #d8a84f;border-radius:16px;padding:13px;margin-top:12px;background:rgba(255,250,242,.7)}
-    .scaleBox{border-radius:18px;padding:14px;margin:10px 0;background:rgba(255,250,242,.68)}.scaleHead{display:flex;justify-content:space-between;gap:10px;align-items:center}.score{font-family:Georgia,serif;font-size:28px;font-weight:900}.hint{font-size:13px;opacity:.75;margin-top:4px}.delta{font-weight:900;margin-top:10px}
-    @media(max-width:420px){h1{font-size:34px}.row{grid-template-columns:1fr}.card{padding:19px}}
+    body{margin:0;min-height:100vh;padding:18px;font-family:system-ui,sans-serif}main{max-width:520px;margin:0 auto;padding:10px 0 28px}.card{border-radius:28px;padding:22px;margin:12px 0}.tag{font-size:12px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;opacity:.8}h1{font-family:Georgia,serif;font-size:38px;line-height:1.05;margin:8px 0}h2{font-size:16px;margin:20px 0 10px}p{font-size:16px;line-height:1.55}.muted{opacity:.78}.small{font-size:13px}.btn,.pill{display:block;width:100%;box-sizing:border-box;text-align:left;border:0;border-radius:16px;padding:14px 15px;margin:9px 0;font-weight:900;color:inherit;text-decoration:none;font-size:15px;cursor:pointer;background:rgba(255,250,242,.72)}.btn span,.pill span{display:block;font-weight:700;font-size:13px;line-height:1.35;margin-top:4px;opacity:.82}.primary{background:#9b2f20!important;color:#fff!important}.dark{background:#24170f!important;color:#fff!important}.steps{display:grid;gap:10px;margin-top:12px}.step{border-radius:16px;padding:13px;background:rgba(255,250,242,.68)}.step b{font-family:Georgia,serif}textarea,input{width:100%;box-sizing:border-box;border-radius:14px;border:1px solid rgba(92,53,25,.22);padding:12px;font:inherit;background:rgba(255,250,242,.82);color:inherit}input[type=range]{padding:0;border:0;background:transparent;accent-color:#9b2f20}label{display:block;font-weight:900;margin-top:12px;margin-bottom:6px}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.hidden{display:none}.topnav{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.topnav a{font-size:13px;text-decoration:none;border-radius:999px;padding:9px 11px;background:rgba(255,250,242,.78);font-weight:900;color:inherit}.result{border-left:6px solid #d8a84f;border-radius:16px;padding:13px;margin-top:12px;background:rgba(255,250,242,.7)}.scaleBox{border-radius:18px;padding:14px;margin:10px 0;background:rgba(255,250,242,.68)}.scaleHead{display:flex;justify-content:space-between;gap:10px;align-items:center}.score{font-family:Georgia,serif;font-size:28px;font-weight:900}.hint{font-size:13px;opacity:.75;margin-top:4px}.delta{font-weight:900;margin-top:10px}@media(max-width:420px){h1{font-size:34px}.row{grid-template-columns:1fr}.card{padding:19px}}
   </style>
 </head>
-<body>
-<main>
-  <div class="topnav"><a href="gerbang-17.html?v=19">← Gerbang</a><a href="app-pro-safe.html?v=19">Observasi</a><a href="template-respons-tenang.html?v=19">Respons Tenang</a><a href="riwayat-pola.html?v=19">Riwayat Pola</a></div>
-
-  <section class="card" id="start">
-    <div class="tag">Mode Jeda Cepat</div>
-    <h1>Sebelum bereaksi, ambil jeda kecil.</h1>
-    <p class="muted">Pilih kondisi yang paling terasa sekarang. Aplikasi akan memandu kamu melihat fakta, menenangkan tubuh, lalu memilih satu langkah aman.</p>
-    <h2>Apa yang paling kuat sekarang?</h2>
-    <button class="pill primary" data-rasa="hampir marah">Saya hampir marah<span>Untuk saat tubuh panas dan ingin menyerang.</span></button>
-    <button class="pill" data-rasa="ingin membalas pesan">Saya ingin membalas pesan<span>Untuk WA/chat yang terasa memancing respons cepat.</span></button>
-    <button class="pill" data-rasa="panik uang">Saya panik soal uang<span>Untuk rasa takut, saldo, tagihan, atau keputusan belanja.</span></button>
-    <button class="pill" data-rasa="tersinggung">Saya tersinggung<span>Untuk rasa tidak dihargai, disalahkan, atau ingin membela diri.</span></button>
-    <button class="pill" data-rasa="overthinking">Saya overthinking<span>Untuk pikiran berulang dan skenario yang melelahkan.</span></button>
-    <button class="pill" data-rasa="impulsif">Saya ingin melakukan sesuatu secara impulsif<span>Untuk dorongan belanja, gift, kabur, atau keputusan mendadak.</span></button>
-    <button class="pill" data-rasa="bingung keputusan">Saya bingung mengambil keputusan<span>Untuk kondisi mendesak tapi pikiran belum jernih.</span></button>
-  </section>
-
-  <section class="card hidden" id="guide">
-    <div class="tag">Jeda 90 Detik</div>
-    <h1 id="judulRasa">Ambil jeda.</h1>
-
-    <h2>Sebelum jeda</h2>
-    <div class="scaleBox">
-      <div class="scaleHead"><b>Intensitas rasa sekarang</b><span class="score" id="beforeVal">7</span></div>
-      <input id="beforeScore" type="range" min="1" max="10" value="7">
-      <div class="hint">1 = ringan, 10 = sangat kuat. Isi sesuai rasa saat ini, bukan agar terlihat baik.</div>
-    </div>
-
-    <div class="steps">
-      <div class="step"><b>1. Diam sebentar.</b><br><span>Jangan kirim, jangan putuskan, jangan menyerang dulu.</span></div>
-      <div class="step"><b>2. Tarik napas.</b><br><span>Tarik pelan 4 hitungan. Hembus 6 hitungan. Ulangi 5 kali.</span></div>
-      <div class="step"><b>3. Rasakan tubuh.</b><br><span>Longgarkan bahu. Lepaskan rahang. Turunkan kecepatan.</span></div>
-      <div class="step"><b>4. Lihat fakta.</b><br><span>Fakta dulu, bukan cerita pikiran.</span></div>
-      <div class="step"><b>5. Pilih langkah aman.</b><br><span>Satu langkah kecil lebih baik daripada respons besar saat panas.</span></div>
-    </div>
-
-    <h2>Cermin Reaksi</h2>
-    <label>Fakta yang benar-benar terjadi</label>
-    <textarea id="fakta" rows="3" placeholder="Contoh: Ada pesan masuk yang menekan saya..."></textarea>
-    <label>Rasa yang sedang hadir</label>
-    <textarea id="rasaText" rows="2" placeholder="Contoh: Saya merasa marah, takut, atau tidak dihargai..."></textarea>
-    <label>Respons sadar yang paling aman</label>
-    <textarea id="respons" rows="3" placeholder="Contoh: Saya tunda balasan 10 menit, cek data dulu, lalu jawab singkat..."></textarea>
-
-    <h2>Sesudah jeda</h2>
-    <div class="scaleBox">
-      <div class="scaleHead"><b>Intensitas setelah jeda</b><span class="score" id="afterVal">5</span></div>
-      <input id="afterScore" type="range" min="1" max="10" value="5">
-      <div class="delta" id="deltaText">Perubahan: turun 2 poin.</div>
-      <div class="hint">Tidak harus langsung tenang. Yang penting mulai ada jarak sebelum bertindak.</div>
-    </div>
-
-    <div class="row">
-      <button class="btn dark" id="saveBtn">Simpan Jeda</button>
-      <button class="btn" id="resetBtn">Mulai Ulang</button>
-    </div>
-    <div class="result hidden" id="savedBox">Jeda tersimpan di perangkat ini. Kamu bisa melihatnya di Riwayat Pola.</div>
-    <a class="btn primary" href="template-respons-tenang.html?v=19">Bantu Susun Respons Tenang<span>Pilih balasan halus, tegas, atau singkat sebelum mengirim pesan.</span></a>
-    <a class="btn" href="riwayat-pola.html?v=19">Lihat Riwayat Pola<span>Baca pola 7 hari terakhir dari catatan jeda yang sudah tersimpan.</span></a>
-  </section>
-
-  <section class="card">
-    <div class="tag">Pengingat Aman</div>
-    <p class="small muted">Naik-Sadar adalah alat refleksi dan jeda sadar. Jika kondisi terasa sangat berat atau tidak aman, hubungi orang terdekat atau tenaga profesional.</p>
-  </section>
-</main>
-<script>
-  let selected='';
-  const start=document.getElementById('start');
-  const guide=document.getElementById('guide');
-  const judul=document.getElementById('judulRasa');
-  const beforeScore=document.getElementById('beforeScore');
-  const afterScore=document.getElementById('afterScore');
-  const beforeVal=document.getElementById('beforeVal');
-  const afterVal=document.getElementById('afterVal');
-  const deltaText=document.getElementById('deltaText');
-  function updateScores(){
-    const b=Number(beforeScore.value); const a=Number(afterScore.value); const diff=b-a;
-    beforeVal.textContent=b; afterVal.textContent=a;
-    deltaText.textContent=diff>0?'Perubahan: turun '+diff+' poin.':diff===0?'Perubahan: masih sama. Tetap pilih respons aman.':'Perubahan: naik '+Math.abs(diff)+' poin. Ambil jeda lebih lama sebelum bertindak.';
-  }
+<body><main>
+  <div class="topnav"><a href="gerbang-17.html?v=22">← Beranda</a><a href="peta-alur.html?v=22">Peta Alur</a><a href="template-respons-tenang.html?v=22">Respons Tenang</a><a href="riwayat-pola.html?v=22">Riwayat Pola</a></div>
+  <section class="card" id="start"><div class="tag">Tahap 2 dari 4 · Mode Jeda</div><h1>Sebelum bereaksi, ambil jeda kecil.</h1><p class="muted">Pilih kondisi yang paling terasa sekarang. Aplikasi akan memandu kamu melihat fakta, menenangkan tubuh, lalu memilih satu langkah aman.</p><h2>Apa yang paling kuat sekarang?</h2><button class="pill primary" data-rasa="hampir marah">Saya hampir marah<span>Untuk saat tubuh panas dan ingin menyerang.</span></button><button class="pill" data-rasa="ingin membalas pesan">Saya ingin membalas pesan<span>Untuk WA/chat yang terasa memancing respons cepat.</span></button><button class="pill" data-rasa="panik uang">Saya panik soal uang<span>Untuk rasa takut, saldo, tagihan, atau keputusan belanja.</span></button><button class="pill" data-rasa="tersinggung">Saya tersinggung<span>Untuk rasa tidak dihargai, disalahkan, atau ingin membela diri.</span></button><button class="pill" data-rasa="overthinking">Saya overthinking<span>Untuk pikiran berulang dan skenario yang melelahkan.</span></button><button class="pill" data-rasa="impulsif">Saya ingin melakukan sesuatu secara impulsif<span>Untuk dorongan belanja, gift, kabur, atau keputusan mendadak.</span></button><button class="pill" data-rasa="bingung keputusan">Saya bingung mengambil keputusan<span>Untuk kondisi mendesak tapi pikiran belum jernih.</span></button></section>
+  <section class="card hidden" id="guide"><div class="tag">Tahap 3 dari 4 · Jeda 90 Detik</div><h1 id="judulRasa">Ambil jeda.</h1><h2>Sebelum jeda</h2><div class="scaleBox"><div class="scaleHead"><b>Intensitas rasa sekarang</b><span class="score" id="beforeVal">7</span></div><input id="beforeScore" type="range" min="1" max="10" value="7"><div class="hint">1 = ringan, 10 = sangat kuat. Isi sesuai rasa saat ini, bukan agar terlihat baik.</div></div><div class="steps"><div class="step"><b>1. Diam sebentar.</b><br><span>Jangan kirim, jangan putuskan, jangan menyerang dulu.</span></div><div class="step"><b>2. Tarik napas.</b><br><span>Tarik pelan 4 hitungan. Hembus 6 hitungan. Ulangi 5 kali.</span></div><div class="step"><b>3. Rasakan tubuh.</b><br><span>Longgarkan bahu. Lepaskan rahang. Turunkan kecepatan.</span></div><div class="step"><b>4. Lihat fakta.</b><br><span>Fakta dulu, bukan cerita pikiran.</span></div><div class="step"><b>5. Pilih langkah aman.</b><br><span>Satu langkah kecil lebih baik daripada respons besar saat panas.</span></div></div><h2>Cermin Reaksi</h2><label>Fakta yang benar-benar terjadi</label><textarea id="fakta" rows="3" placeholder="Contoh: Ada pesan masuk yang menekan saya..."></textarea><label>Rasa yang sedang hadir</label><textarea id="rasaText" rows="2" placeholder="Contoh: Saya merasa marah, takut, atau tidak dihargai..."></textarea><label>Respons sadar yang paling aman</label><textarea id="respons" rows="3" placeholder="Contoh: Saya tunda balasan 10 menit, cek data dulu, lalu jawab singkat..."></textarea><h2>Sesudah jeda</h2><div class="scaleBox"><div class="scaleHead"><b>Intensitas setelah jeda</b><span class="score" id="afterVal">5</span></div><input id="afterScore" type="range" min="1" max="10" value="5"><div class="delta" id="deltaText">Perubahan: turun 2 poin.</div><div class="hint">Tidak harus langsung tenang. Yang penting mulai ada jarak sebelum bertindak.</div></div><div class="row"><button class="btn dark" id="saveBtn">Simpan Jeda</button><button class="btn" id="resetBtn">Mulai Ulang</button></div><div class="result hidden" id="savedBox">Jeda tersimpan. Lanjutkan ke langkah yang paling cocok di bawah.</div><h2>Lanjut ke...</h2><a class="btn primary" href="template-respons-tenang.html?v=22">Bantu Susun Respons Tenang<span>Jika perlu membalas pesan, susun balasan halus, tegas, atau singkat.</span></a><a class="btn" href="satu-langkah-hari-ini.html?v=22">Ambil Satu Langkah<span>Jika sudah lebih jernih, pilih satu tindakan kecil yang aman.</span></a><a class="btn" href="riwayat-pola.html?v=22">Lihat Riwayat Pola<span>Baca pola 7 hari terakhir dari catatan jeda dan cek diri.</span></a></section>
+  <section class="card"><div class="tag">Pengingat Aman</div><p class="small muted">Naik-Sadar adalah alat refleksi dan jeda sadar. Jika kondisi terasa sangat berat atau tidak aman, hubungi orang terdekat atau tenaga profesional.</p></section>
+</main><script>
+  let selected=''; const start=document.getElementById('start'), guide=document.getElementById('guide'), judul=document.getElementById('judulRasa'), beforeScore=document.getElementById('beforeScore'), afterScore=document.getElementById('afterScore'), beforeVal=document.getElementById('beforeVal'), afterVal=document.getElementById('afterVal'), deltaText=document.getElementById('deltaText');
+  function updateScores(){const b=Number(beforeScore.value), a=Number(afterScore.value), diff=b-a; beforeVal.textContent=b; afterVal.textContent=a; deltaText.textContent=diff>0?'Perubahan: turun '+diff+' poin.':diff===0?'Perubahan: masih sama. Tetap pilih respons aman.':'Perubahan: naik '+Math.abs(diff)+' poin. Ambil jeda lebih lama sebelum bertindak.';}
   beforeScore.addEventListener('input',updateScores); afterScore.addEventListener('input',updateScores); updateScores();
-  document.querySelectorAll('[data-rasa]').forEach(btn=>btn.addEventListener('click',()=>{
-    selected=btn.dataset.rasa;
-    judul.textContent='Saya sedang '+selected+'.';
-    start.classList.add('hidden');
-    guide.classList.remove('hidden');
-    window.scrollTo({top:0,behavior:'smooth'});
-  }));
-  document.getElementById('resetBtn').addEventListener('click',()=>{
-    selected=''; document.getElementById('fakta').value=''; document.getElementById('rasaText').value=''; document.getElementById('respons').value=''; beforeScore.value=7; afterScore.value=5; updateScores(); document.getElementById('savedBox').classList.add('hidden'); guide.classList.add('hidden'); start.classList.remove('hidden'); window.scrollTo({top:0,behavior:'smooth'});
-  });
-  document.getElementById('saveBtn').addEventListener('click',()=>{
-    const item={tanggal:new Date().toISOString(),kondisi:selected,beforeIntensity:Number(beforeScore.value),afterIntensity:Number(afterScore.value),fakta:document.getElementById('fakta').value.trim(),rasa:document.getElementById('rasaText').value.trim(),respons:document.getElementById('respons').value.trim()};
-    const key='naikSadarJedaLog';
-    const old=JSON.parse(localStorage.getItem(key)||'[]');
-    old.unshift(item); localStorage.setItem(key,JSON.stringify(old.slice(0,50)));
-    document.getElementById('savedBox').classList.remove('hidden');
-  });
-</script>
-<script src="assets/nusantara-theme-toggle.js"></script>
-<script src="assets/nusantara-audio.js"></script>
-</body>
-</html>
+  document.querySelectorAll('[data-rasa]').forEach(btn=>btn.addEventListener('click',()=>{selected=btn.dataset.rasa; judul.textContent='Saya sedang '+selected+'.'; start.classList.add('hidden'); guide.classList.remove('hidden'); window.scrollTo({top:0,behavior:'smooth'});}));
+  document.getElementById('resetBtn').addEventListener('click',()=>{selected=''; document.getElementById('fakta').value=''; document.getElementById('rasaText').value=''; document.getElementById('respons').value=''; beforeScore.value=7; afterScore.value=5; updateScores(); document.getElementById('savedBox').classList.add('hidden'); guide.classList.add('hidden'); start.classList.remove('hidden'); window.scrollTo({top:0,behavior:'smooth'});});
+  document.getElementById('saveBtn').addEventListener('click',()=>{const item={tanggal:new Date().toISOString(),kondisi:selected,beforeIntensity:Number(beforeScore.value),afterIntensity:Number(afterScore.value),fakta:document.getElementById('fakta').value.trim(),rasa:document.getElementById('rasaText').value.trim(),respons:document.getElementById('respons').value.trim()}; const key='naikSadarJedaLog'; const old=JSON.parse(localStorage.getItem(key)||'[]'); old.unshift(item); localStorage.setItem(key,JSON.stringify(old.slice(0,50))); document.getElementById('savedBox').classList.remove('hidden');});
+</script><script src="assets/nusantara-theme-toggle.js?v=22"></script><script src="assets/nusantara-audio.js?v=22"></script></body></html>
