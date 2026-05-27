@@ -18,7 +18,9 @@
     .primary{background:#9b2f20!important;color:#fff!important}.dark{background:#24170f!important;color:#fff!important}
     .steps{display:grid;gap:10px;margin-top:12px}.step{border-radius:16px;padding:13px;background:rgba(255,250,242,.68)}.step b{font-family:Georgia,serif}
     textarea,input,select{width:100%;box-sizing:border-box;border-radius:14px;border:1px solid rgba(92,53,25,.22);padding:12px;font:inherit;background:rgba(255,250,242,.82);color:inherit}
+    input[type="range"]{padding:0;border:0;background:transparent;accent-color:#9b2f20}
     label{display:block;font-weight:900;margin-top:12px;margin-bottom:6px}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.hidden{display:none}.topnav{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.topnav a{font-size:13px;text-decoration:none;border-radius:999px;padding:9px 11px;background:rgba(255,250,242,.78);font-weight:900;color:inherit}.result{border-left:6px solid #d8a84f;border-radius:16px;padding:13px;margin-top:12px;background:rgba(255,250,242,.7)}
+    .scaleBox{border-radius:18px;padding:14px;margin:10px 0;background:rgba(255,250,242,.68)}.scaleHead{display:flex;justify-content:space-between;gap:10px;align-items:center}.score{font-family:Georgia,serif;font-size:28px;font-weight:900}.hint{font-size:13px;opacity:.75;margin-top:4px}.delta{font-weight:900;margin-top:10px}
     @media(max-width:420px){h1{font-size:34px}.row{grid-template-columns:1fr}.card{padding:19px}}
   </style>
 </head>
@@ -43,6 +45,14 @@
   <section class="card hidden" id="guide">
     <div class="tag">Jeda 90 Detik</div>
     <h1 id="judulRasa">Ambil jeda.</h1>
+
+    <h2>Sebelum jeda</h2>
+    <div class="scaleBox">
+      <div class="scaleHead"><b>Intensitas rasa sekarang</b><span class="score" id="beforeVal">7</span></div>
+      <input id="beforeScore" type="range" min="1" max="10" value="7">
+      <div class="hint">1 = ringan, 10 = sangat kuat. Isi sesuai rasa saat ini, bukan agar terlihat baik.</div>
+    </div>
+
     <div class="steps">
       <div class="step"><b>1. Diam sebentar.</b><br><span>Jangan kirim, jangan putuskan, jangan menyerang dulu.</span></div>
       <div class="step"><b>2. Tarik napas.</b><br><span>Tarik pelan 4 hitungan. Hembus 6 hitungan. Ulangi 5 kali.</span></div>
@@ -58,6 +68,15 @@
     <textarea id="rasaText" rows="2" placeholder="Contoh: Saya merasa marah, takut, atau tidak dihargai..."></textarea>
     <label>Respons sadar yang paling aman</label>
     <textarea id="respons" rows="3" placeholder="Contoh: Saya tunda balasan 10 menit, cek data dulu, lalu jawab singkat..."></textarea>
+
+    <h2>Sesudah jeda</h2>
+    <div class="scaleBox">
+      <div class="scaleHead"><b>Intensitas setelah jeda</b><span class="score" id="afterVal">5</span></div>
+      <input id="afterScore" type="range" min="1" max="10" value="5">
+      <div class="delta" id="deltaText">Perubahan: turun 2 poin.</div>
+      <div class="hint">Tidak harus langsung tenang. Yang penting mulai ada jarak sebelum bertindak.</div>
+    </div>
+
     <div class="row">
       <button class="btn dark" id="saveBtn">Simpan Jeda</button>
       <button class="btn" id="resetBtn">Mulai Ulang</button>
@@ -76,6 +95,17 @@
   const start=document.getElementById('start');
   const guide=document.getElementById('guide');
   const judul=document.getElementById('judulRasa');
+  const beforeScore=document.getElementById('beforeScore');
+  const afterScore=document.getElementById('afterScore');
+  const beforeVal=document.getElementById('beforeVal');
+  const afterVal=document.getElementById('afterVal');
+  const deltaText=document.getElementById('deltaText');
+  function updateScores(){
+    const b=Number(beforeScore.value); const a=Number(afterScore.value); const diff=b-a;
+    beforeVal.textContent=b; afterVal.textContent=a;
+    deltaText.textContent=diff>0?'Perubahan: turun '+diff+' poin.':diff===0?'Perubahan: masih sama. Tetap pilih respons aman.':'Perubahan: naik '+Math.abs(diff)+' poin. Ambil jeda lebih lama sebelum bertindak.';
+  }
+  beforeScore.addEventListener('input',updateScores); afterScore.addEventListener('input',updateScores); updateScores();
   document.querySelectorAll('[data-rasa]').forEach(btn=>btn.addEventListener('click',()=>{
     selected=btn.dataset.rasa;
     judul.textContent='Saya sedang '+selected+'.';
@@ -84,10 +114,10 @@
     window.scrollTo({top:0,behavior:'smooth'});
   }));
   document.getElementById('resetBtn').addEventListener('click',()=>{
-    selected=''; document.getElementById('fakta').value=''; document.getElementById('rasaText').value=''; document.getElementById('respons').value=''; document.getElementById('savedBox').classList.add('hidden'); guide.classList.add('hidden'); start.classList.remove('hidden'); window.scrollTo({top:0,behavior:'smooth'});
+    selected=''; document.getElementById('fakta').value=''; document.getElementById('rasaText').value=''; document.getElementById('respons').value=''; beforeScore.value=7; afterScore.value=5; updateScores(); document.getElementById('savedBox').classList.add('hidden'); guide.classList.add('hidden'); start.classList.remove('hidden'); window.scrollTo({top:0,behavior:'smooth'});
   });
   document.getElementById('saveBtn').addEventListener('click',()=>{
-    const item={tanggal:new Date().toISOString(),kondisi:selected,fakta:document.getElementById('fakta').value.trim(),rasa:document.getElementById('rasaText').value.trim(),respons:document.getElementById('respons').value.trim()};
+    const item={tanggal:new Date().toISOString(),kondisi:selected,beforeIntensity:Number(beforeScore.value),afterIntensity:Number(afterScore.value),fakta:document.getElementById('fakta').value.trim(),rasa:document.getElementById('rasaText').value.trim(),respons:document.getElementById('respons').value.trim()};
     const key='naikSadarJedaLog';
     const old=JSON.parse(localStorage.getItem(key)||'[]');
     old.unshift(item); localStorage.setItem(key,JSON.stringify(old.slice(0,50)));
