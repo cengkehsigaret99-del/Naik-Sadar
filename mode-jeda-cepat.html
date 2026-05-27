@@ -18,13 +18,13 @@
     .primary{background:#9b2f20!important;color:#fff!important}.dark{background:#24170f!important;color:#fff!important}
     .steps{display:grid;gap:10px;margin-top:12px}.step{border-radius:16px;padding:13px;background:rgba(255,250,242,.68)}.step b{font-family:Georgia,serif}
     textarea,input,select{width:100%;box-sizing:border-box;border-radius:14px;border:1px solid rgba(92,53,25,.22);padding:12px;font:inherit;background:rgba(255,250,242,.82);color:inherit}
-    label{display:block;font-weight:900;margin-top:12px;margin-bottom:6px}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.hidden{display:none}.topnav{display:flex;gap:8px;align-items:center}.topnav a{font-size:13px;text-decoration:none;border-radius:999px;padding:9px 11px;background:rgba(255,250,242,.78);font-weight:900;color:inherit}.result{border-left:6px solid #d8a84f;border-radius:16px;padding:13px;margin-top:12px;background:rgba(255,250,242,.7)}
+    label{display:block;font-weight:900;margin-top:12px;margin-bottom:6px}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.hidden{display:none}.topnav{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.topnav a{font-size:13px;text-decoration:none;border-radius:999px;padding:9px 11px;background:rgba(255,250,242,.78);font-weight:900;color:inherit}.result{border-left:6px solid #d8a84f;border-radius:16px;padding:13px;margin-top:12px;background:rgba(255,250,242,.7)}
     @media(max-width:420px){h1{font-size:34px}.row{grid-template-columns:1fr}.card{padding:19px}}
   </style>
 </head>
 <body>
 <main>
-  <div class="topnav"><a href="gerbang-17.html?v=18">← Gerbang</a><a href="app-pro-safe.html?v=18">Observasi</a></div>
+  <div class="topnav"><a href="gerbang-17.html?v=18">← Gerbang</a><a href="app-pro-safe.html?v=18">Observasi</a><a href="riwayat-pola.html?v=18">Riwayat Pola</a></div>
 
   <section class="card" id="start">
     <div class="tag">Mode Jeda Cepat</div>
@@ -62,7 +62,8 @@
       <button class="btn dark" id="saveBtn">Simpan Jeda</button>
       <button class="btn" id="resetBtn">Mulai Ulang</button>
     </div>
-    <div class="result hidden" id="savedBox">Jeda tersimpan di perangkat ini. Buka lagi saat ingin melihat pola diri.</div>
+    <div class="result hidden" id="savedBox">Jeda tersimpan di perangkat ini. Kamu bisa melihatnya di Riwayat Pola.</div>
+    <a class="btn" href="riwayat-pola.html?v=18">Lihat Riwayat Pola<span>Baca pola 7 hari terakhir dari catatan jeda yang sudah tersimpan.</span></a>
   </section>
 
   <section class="card">
