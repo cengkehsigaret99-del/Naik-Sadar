@@ -2,10 +2,13 @@
   if(window.__NUSANTARA_AUDIO__) return;
   window.__NUSANTARA_AUDIO__ = true;
 
+  // Musik hanya aktif di halaman induk. Jika halaman dibuka di dalam iframe app-shell,
+  // audio di halaman anak tidak dibuat agar tidak dobel.
+  if(window.top !== window.self) return;
+
   const PREF_KEY = 'nsMusicPreference';
-  const AUDIO_SRC = 'assets/audio/naik-sadar-bg.mp3';
+  const AUDIO_SRC = 'assets/audio/naik-sadar-bg.mp3?v=21';
   let audio = null;
-  let ready = false;
 
   function pref(){ return localStorage.getItem(PREF_KEY) || 'off'; }
   function setPref(v){ localStorage.setItem(PREF_KEY,v); }
@@ -16,7 +19,7 @@
     b.id='nsMusicToggle';
     b.type='button';
     b.textContent=buttonText();
-    b.style.cssText='position:fixed;left:14px;bottom:88px;z-index:10000;border:0;border-radius:999px;padding:10px 13px;font-weight:900;background:rgba(255,250,242,.92);color:#24170f;box-shadow:0 12px 30px rgba(92,53,25,.18)';
+    b.style.cssText='position:fixed;left:14px;bottom:88px;z-index:10000;border:0;border-radius:999px;padding:10px 13px;font-weight:900;background:rgba(255,250,242,.94);color:#24170f;box-shadow:0 12px 30px rgba(92,53,25,.18)';
     b.onclick=function(){
       if(pref()==='on'){
         setPref('off');
@@ -48,7 +51,6 @@
     audio.preload='auto';
     audio.volume=0.55;
     audio.style.display='none';
-    audio.addEventListener('canplaythrough',function(){ ready=true; });
     audio.addEventListener('error',function(){
       setPref('off');
       updateButton();
@@ -63,9 +65,7 @@
     if(pref()!=='on' && !fromUser) return;
     const p=a.play();
     if(p && p.catch){
-      p.catch(function(){
-        updateButton();
-      });
+      p.catch(function(){ updateButton(); });
     }
   }
 
