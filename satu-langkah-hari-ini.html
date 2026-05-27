@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Satu Langkah Hari Ini | Naik-Sadar</title>
+  <link rel="stylesheet" href="assets/nusantara-theme.css">
+  <style>
+    body{margin:0;min-height:100vh;padding:18px;font-family:system-ui,sans-serif}
+    main{max-width:560px;margin:0 auto;padding:10px 0 32px}
+    .card{border-radius:28px;padding:22px;margin:12px 0}
+    .tag{font-size:12px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;opacity:.8}
+    h1{font-family:Georgia,serif;font-size:38px;line-height:1.05;margin:8px 0}
+    h2{font-size:16px;margin:20px 0 10px}
+    p{font-size:16px;line-height:1.55}.muted{opacity:.78}.small{font-size:13px}
+    .topnav{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.topnav a{font-size:13px;text-decoration:none;border-radius:999px;padding:9px 11px;background:rgba(255,250,242,.78);font-weight:900;color:inherit}
+    .btn{display:block;width:100%;box-sizing:border-box;text-align:left;border:0;border-radius:16px;padding:14px 15px;margin:9px 0;font-weight:900;color:inherit;text-decoration:none;font-size:15px;cursor:pointer;background:rgba(255,250,242,.72)}
+    .btn span{display:block;font-weight:700;font-size:13px;line-height:1.35;margin-top:4px;opacity:.82}.primary{background:#9b2f20!important;color:#fff!important}.dark{background:#24170f!important;color:#fff!important}
+    .focus{border-left:6px solid #d8a84f;border-radius:18px;padding:16px;background:rgba(255,250,242,.7);margin-top:14px}.focus b{font-family:Georgia,serif;font-size:24px;display:block;margin-bottom:8px}.focus p{margin:0}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.status{border-radius:18px;padding:13px;background:rgba(255,250,242,.68);font-weight:900}.history{display:grid;gap:10px}.entry{border-radius:16px;padding:12px;background:rgba(255,250,242,.68)}.entry small{opacity:.72}.entry p{margin:5px 0;font-size:14px}.hidden{display:none}
+    @media(max-width:420px){h1{font-size:34px}.row{grid-template-columns:1fr}.card{padding:19px}}
+  </style>
+</head>
+<body>
+<main>
+  <div class="topnav"><a href="gerbang-17.html?v=19">← Gerbang</a><a href="mode-jeda-cepat.html?v=19">Mode Jeda Cepat</a><a href="riwayat-pola.html?v=19">Riwayat Pola</a></div>
+
+  <section class="card">
+    <div class="tag">Satu Langkah Hari Ini</div>
+    <h1>Satu tindakan kecil cukup untuk mulai kembali sadar.</h1>
+    <p class="muted">Pilih satu langkah kecil hari ini. Jangan terlalu banyak target. Yang penting ada tindakan nyata yang bisa dilakukan dengan tenang.</p>
+    <div class="focus" id="todayBox">
+      <b id="todayTitle">Memuat langkah...</b>
+      <p id="todayDesc">Sebentar.</p>
+    </div>
+    <div class="row">
+      <button class="btn dark" id="doneBtn">Tandai Selesai<span>Simpan bahwa langkah hari ini sudah dilakukan.</span></button>
+      <button class="btn" id="newBtn">Ganti Langkah<span>Pilih langkah lain yang lebih sesuai hari ini.</span></button>
+    </div>
+    <div class="status hidden" id="statusBox">Langkah hari ini tersimpan.</div>
+  </section>
+
+  <section class="card">
+    <h2>Pilih manual</h2>
+    <button class="btn" data-step="Tunda satu respons" data-desc="Sebelum membalas pesan yang memancing emosi, beri jeda 10 menit dan baca ulang kalimatmu.">Tunda satu respons<span>Untuk komunikasi yang rawan menjadi panas.</span></button>
+    <button class="btn" data-step="Tulis fakta sebelum menilai" data-desc="Tulis satu fakta nyata sebelum membuat kesimpulan atau menyalahkan keadaan.">Tulis fakta sebelum menilai<span>Untuk menurunkan prasangka dan overthinking.</span></button>
+    <button class="btn" data-step="Bicara 10% lebih pelan" data-desc="Saat bicara hari ini, turunkan kecepatan suara sedikit agar respons lebih terkendali.">Bicara 10% lebih pelan<span>Untuk relasi rumah, kerja, dan tim.</span></button>
+    <button class="btn" data-step="Rapikan satu sudut kecil" data-desc="Rapikan satu sudut meja, kamar, dapur, atau area kerja selama 3 menit.">Rapikan satu sudut kecil<span>Ruang luar dirapikan, ruang dalam ikut lebih ringan.</span></button>
+    <button class="btn" data-step="Minum air dengan sadar" data-desc="Minum air pelan-pelan, rasakan tubuh, lalu ambil satu keputusan kecil dengan jernih.">Minum air dengan sadar<span>Untuk reset tubuh tanpa memaksa pikiran.</span></button>
+    <button class="btn" data-step="Cek diri sebelum keputusan" data-desc="Sebelum keputusan penting, tanya: saya sedang tenang, takut, marah, atau ingin diakui?">Cek diri sebelum keputusan<span>Untuk uang, kerja, komunikasi, dan relasi.</span></button>
+  </section>
+
+  <section class="card">
+    <h2>Riwayat langkah kecil</h2>
+    <div class="history" id="historyList"></div>
+  </section>
+</main>
+<script>
+  const steps=[
+    ['Tunda satu respons','Sebelum membalas pesan yang memancing emosi, beri jeda 10 menit dan baca ulang kalimatmu.'],
+    ['Tulis fakta sebelum menilai','Tulis satu fakta nyata sebelum membuat kesimpulan atau menyalahkan keadaan.'],
+    ['Bicara 10% lebih pelan','Saat bicara hari ini, turunkan kecepatan suara sedikit agar respons lebih terkendali.'],
+    ['Rapikan satu sudut kecil','Rapikan satu sudut meja, kamar, dapur, atau area kerja selama 3 menit.'],
+    ['Minum air dengan sadar','Minum air pelan-pelan, rasakan tubuh, lalu ambil satu keputusan kecil dengan jernih.'],
+    ['Cek diri sebelum keputusan','Sebelum keputusan penting, tanya: saya sedang tenang, takut, marah, atau ingin diakui?'],
+    ['Selesaikan satu tugas kecil','Pilih satu tugas kecil yang bisa selesai dalam 5 menit, lalu berhenti sejenak.']
+  ];
+  const todayKey='naikSadarStepToday';
+  const logKey='naikSadarStepLog';
+  const day=new Date().toISOString().slice(0,10);
+  const title=document.getElementById('todayTitle');
+  const desc=document.getElementById('todayDesc');
+  const statusBox=document.getElementById('statusBox');
+  function pick(){return steps[Math.floor(Math.random()*steps.length)];}
+  function getToday(){
+    const saved=JSON.parse(localStorage.getItem(todayKey)||'null');
+    if(saved && saved.day===day){return saved;}
+    const [step,detail]=pick(); const item={day,step,detail,done:false}; localStorage.setItem(todayKey,JSON.stringify(item)); return item;
+  }
+  function render(){const item=getToday(); title.textContent=item.step; desc.textContent=item.detail; statusBox.classList.toggle('hidden',!item.done); renderHistory();}
+  function setToday(step,detail,done=false){const item={day,step,detail,done}; localStorage.setItem(todayKey,JSON.stringify(item)); render();}
+  document.getElementById('newBtn').addEventListener('click',()=>{const [s,d]=pick(); setToday(s,d,false);});
+  document.getElementById('doneBtn').addEventListener('click',()=>{
+    const item=getToday(); item.done=true; localStorage.setItem(todayKey,JSON.stringify(item));
+    const old=JSON.parse(localStorage.getItem(logKey)||'[]');
+    const filtered=old.filter(x=>x.day!==day); filtered.unshift({...item,tanggal:new Date().toISOString()}); localStorage.setItem(logKey,JSON.stringify(filtered.slice(0,30))); render();
+  });
+  document.querySelectorAll('[data-step]').forEach(btn=>btn.addEventListener('click',()=>setToday(btn.dataset.step,btn.dataset.desc,false)));
+  function renderHistory(){
+    const host=document.getElementById('historyList'); const log=JSON.parse(localStorage.getItem(logKey)||'[]'); host.innerHTML='';
+    if(!log.length){host.innerHTML='<div class="entry">Belum ada langkah yang ditandai selesai.</div>'; return;}
+    log.slice(0,7).forEach(x=>{const div=document.createElement('div'); div.className='entry'; div.innerHTML='<small>'+escapeHtml(x.day||'-')+'</small><p><b>'+escapeHtml(x.step||'-')+'</b></p><p>'+escapeHtml(x.detail||'-')+'</p>'; host.appendChild(div);});
+  }
+  function escapeHtml(str){return String(str).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+  render();
+</script>
+<script src="assets/nusantara-theme-toggle.js"></script>
+<script src="assets/nusantara-audio.js"></script>
+</body>
+</html>

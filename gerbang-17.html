@@ -1,1 +1,82 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Naik Sadar Nusantara</title><link rel="stylesheet" href="assets/nusantara-theme.css"><style>body{margin:0;min-height:100vh;display:grid;place-items:center;padding:20px;font-family:system-ui,sans-serif}main{max-width:470px;width:100%}.box{border-radius:28px;padding:22px}.tag,h2{font-size:12px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}h1{font-family:Georgia,serif;font-size:44px;margin:10px 0}p{font-size:16px;line-height:1.55}.quote{border-left:6px solid #d8a84f;border-radius:16px;padding:14px}.btn{display:block;text-decoration:none;border-radius:16px;padding:15px;margin-top:10px;font-weight:900;color:inherit}.btn span{display:block;font-size:14px;line-height:1.45;margin-top:4px}.status{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.s{border-radius:16px;padding:12px}.s b{font-size:17px;font-family:Georgia,serif}@media(max-width:380px){.status{grid-template-columns:1fr}h1{font-size:40px}}</style></head><body><main><section class="box"><div class="tag">Mandala Sadar Nusantara</div><h1>Naik Sadar</h1><div class="ns-ornament"></div><p>Pilih ruang latihan yang paling sesuai. Gunakan tombol Tema untuk Auto, Terang, atau Gelap.</p><div class="quote">Rasa ditenangkan. Ruang ditata. Tindakan dipilih dengan sadar.</div><h2>Alat Utama</h2><a class="btn primary" href="app-pro-safe.html?v=17">Observasi dan Jeda<span>Cek kondisi, jeda napas, lalu pilih langkah berikutnya.</span></a><a class="btn dark" href="kebersihan-sadar-safe.html?v=17">Kerapian Area<span>Evaluasi area dan pilih tindakan perapian singkat.</span></a><h2>Standar Area</h2><a class="btn" href="kebersihan-5s-nusantara.html?v=17">Mode 5S<span>Pilah, tata, bersihkan, standarkan, pelihara.</span></a><h2>Pendukung</h2><a class="btn" href="safety/index.html?v=17">Mode Bantuan<span>Untuk bingung, panik, impulsif, atau sulit menilai keadaan.</span></a><a class="btn" href="latihan-pro-dark.html?v=17">Latihan Singkat<span>Latihan pendukung harian.</span></a><a class="btn" href="naik-sadar-2-dark.html?v=17">Versi Lengkap<span>Versi tambahan dengan musik dan pilihan tema.</span></a><div class="status"><div class="s"><b>Observasi</b><span>Cek kondisi</span></div><div class="s"><b>Kerapian</b><span>Area kerja</span></div><div class="s"><b>5S</b><span>Standar area</span></div><div class="s"><b>Bantuan</b><span>Mode safety</span></div></div></section></main><script src="assets/nusantara-theme-toggle.js"></script><script src="assets/nusantara-audio.js"></script></body></html>
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Naik-Sadar | Sadar dulu, baru melangkah</title>
+  <link rel="stylesheet" href="assets/nusantara-theme.css">
+  <style>
+    body{margin:0;min-height:100vh;display:grid;place-items:center;padding:20px;font-family:system-ui,sans-serif}
+    main{max-width:500px;width:100%}
+    .box{border-radius:28px;padding:22px}
+    .tag,h2{font-size:12px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+    h1{font-family:Georgia,serif;font-size:44px;margin:10px 0 6px}
+    p{font-size:16px;line-height:1.55}
+    .lead{font-size:17px;margin-top:0}
+    .quote{border-left:6px solid #d8a84f;border-radius:16px;padding:14px;margin:16px 0}
+    .btn{display:block;text-decoration:none;border-radius:16px;padding:15px;margin-top:10px;font-weight:900;color:inherit}
+    .btn span{display:block;font-size:14px;line-height:1.45;margin-top:4px;font-weight:700;opacity:.88}
+    .btn.big{padding:18px 16px;font-size:18px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+    .mini{border-radius:16px;padding:12px}.mini b{font-size:16px;font-family:Georgia,serif}.mini span{display:block;font-size:13px;line-height:1.35;margin-top:4px;opacity:.86}
+    .dash{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin:16px 0}.dashItem{border-radius:16px;padding:12px;background:rgba(255,250,242,.72)}.dashItem b{font-family:Georgia,serif;font-size:24px;display:block}.dashItem span{font-size:12px;line-height:1.25;opacity:.82}
+    .note{font-size:13px;opacity:.78;margin-top:15px}
+    @media(max-width:420px){.grid,.dash{grid-template-columns:1fr}h1{font-size:40px}.box{padding:20px}}
+  </style>
+</head>
+<body>
+  <main>
+    <section class="box">
+      <div class="tag">Naik-Sadar</div>
+      <h1>Sadar dulu, baru melangkah.</h1>
+      <div class="ns-ornament"></div>
+      <p class="lead">Pilih ruang yang paling kamu butuhkan hari ini. Mulai dari jeda kecil sebelum bereaksi.</p>
+      <div class="quote">Berhenti sebentar. Sadari keadaan diri. Tenangkan tubuh. Pilih satu langkah yang lebih jernih.</div>
+
+      <div class="dash" aria-label="Ringkasan lokal Naik-Sadar">
+        <div class="dashItem"><b id="cekCount">0</b><span>Cek diri 7 hari</span></div>
+        <div class="dashItem"><b id="jedaCount">0</b><span>Jeda 7 hari</span></div>
+        <div class="dashItem"><b id="stepStatus">-</b><span>Langkah hari ini</span></div>
+      </div>
+
+      <h2>Mulai Cepat</h2>
+      <a class="btn primary big" href="cek-diri-10-detik.html?v=19">Cek Diri 10 Detik<span>Pilih rasa dan pemicu, lalu aplikasi arahkan ke langkah yang paling cocok.</span></a>
+      <a class="btn dark" href="mode-jeda-cepat.html?v=19">Mode Jeda Cepat<span>Bantuan singkat ketika emosi naik, impuls muncul, atau keputusan terasa mendesak.</span></a>
+      <a class="btn" href="template-respons-tenang.html?v=19">Template Respons Tenang<span>Pilih balasan halus, tegas, atau singkat sebelum mengirim pesan.</span></a>
+
+      <h2>Latihan Harian</h2>
+      <a class="btn" href="satu-langkah-hari-ini.html?v=19">Satu Langkah Hari Ini<span>Pilih satu tindakan kecil yang bisa dilakukan hari ini dengan sadar.</span></a>
+      <a class="btn" href="latihan-pro-dark.html?v=19">Latihan Singkat<span>Napas, refleksi pendek, dan latihan kembali ke pusat diri.</span></a>
+      <a class="btn" href="riwayat-pola.html?v=19">Riwayat Pola<span>Lihat catatan jeda, kondisi yang sering muncul, dan arah langkah 7 hari terakhir.</span></a>
+      <a class="btn" href="kebersihan-sadar-safe.html?v=19">Kerapian Area<span>Rapikan ruang luar sebagai jalan menenangkan ruang dalam.</span></a>
+
+      <h2>Ruang Pendukung</h2>
+      <a class="btn" href="kebersihan-5s-nusantara.html?v=19">Mode 5S<span>Pilah, tata, bersihkan, standarkan, dan pelihara area.</span></a>
+      <a class="btn" href="naik-sadar-2-dark.html?v=19">Versi Lengkap<span>Ruang tambahan dengan musik, tema, dan latihan pendukung.</span></a>
+
+      <div class="grid">
+        <div class="mini"><b>Cek Diri</b><span>Kenali rasa dan pemicu.</span></div>
+        <div class="mini"><b>Jeda</b><span>Tarik napas sebelum bereaksi.</span></div>
+        <div class="mini"><b>Langkah</b><span>Latihan kecil setiap hari.</span></div>
+        <div class="mini"><b>Pola</b><span>Lihat keadaan yang sering berulang.</span></div>
+      </div>
+      <p class="note">Naik-Sadar adalah alat refleksi dan jeda sadar. Bukan pengganti bantuan profesional saat kondisi terasa tidak aman.</p>
+    </section>
+  </main>
+  <script>
+    const now=Date.now();
+    const seven=7*24*60*60*1000;
+    function read(key){try{return JSON.parse(localStorage.getItem(key)||'[]').filter(Boolean)}catch(e){return []}}
+    function count7(key){return read(key).filter(x=>x.tanggal && (now-new Date(x.tanggal).getTime())<=seven).length}
+    document.getElementById('cekCount').textContent=count7('naikSadarCekDiriLog');
+    document.getElementById('jedaCount').textContent=count7('naikSadarJedaLog');
+    try{
+      const today=new Date().toISOString().slice(0,10);
+      const step=JSON.parse(localStorage.getItem('naikSadarStepToday')||'null');
+      document.getElementById('stepStatus').textContent=(step && step.day===today && step.done)?'Selesai':'Belum';
+    }catch(e){document.getElementById('stepStatus').textContent='-'}
+  </script>
+  <script src="assets/nusantara-theme-toggle.js"></script>
+  <script src="assets/nusantara-audio.js"></script>
+</body>
+</html>
