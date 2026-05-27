@@ -1,0 +1,25 @@
+{
+  "name": "Unified Control Panel QA",
+  "version": "18",
+  "status": "ready_for_mobile_test",
+  "purpose": "Cek Panel Kontrol sebagai pengganti tombol floating terpisah.",
+  "pages": [
+    "gerbang-10.html?v=18",
+    "app-pro-safe.html?v=18",
+    "kebersihan-sadar-safe.html?v=18",
+    "kebersihan-5s-nusantara.html?v=18",
+    "latihan-pro-nusantara.html?v=18",
+    "naik-sadar-2-nusantara-audio.html?v=18",
+    "safety/index.html?v=18"
+  ],
+  "pass_if": [
+    "Only one Kontrol button is visible",
+    "Panel opens and closes",
+    "Tema cycles Auto Terang Gelap",
+    "Musik Hening control works",
+    "Bantuan link works",
+    "Gerbang link works",
+    "Old floating buttons are hidden",
+    "Bottom navigation is not covered"
+  ]
+}
