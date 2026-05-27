@@ -21,7 +21,7 @@
 </head>
 <body>
 <main>
-  <div class="topnav"><a href="gerbang-17.html?v=18">← Gerbang</a><a href="mode-jeda-cepat.html?v=18">Mode Jeda</a><a href="satu-langkah-hari-ini.html?v=18">Satu Langkah</a></div>
+  <div class="topnav"><a href="gerbang-17.html?v=19">← Gerbang</a><a href="mode-jeda-cepat.html?v=19">Mode Jeda</a><a href="satu-langkah-hari-ini.html?v=19">Satu Langkah</a></div>
 
   <section class="card" id="step1">
     <div class="tag">Cek Diri 10 Detik</div>
@@ -80,11 +80,11 @@
   }
   function recommend(){
     const base=[];
-    if(rasa.includes('Tenang')){base.push({title:'Satu Langkah Hari Ini',desc:'Jaga arah hari dengan satu tindakan kecil.',href:'satu-langkah-hari-ini.html?v=18',primary:true});}
-    else{base.push({title:'Mode Jeda Cepat',desc:'Ambil jeda, turunkan intensitas, lalu pilih respons aman.',href:'mode-jeda-cepat.html?v=18',primary:true});}
-    if(pemicu.includes('Komunikasi') || rasa.includes('Tersinggung') || rasa.includes('Marah')){base.push({title:'Template Respons Tenang',desc:'Bantu susun balasan halus, tegas, atau singkat sebelum kirim pesan.',href:'template-respons-tenang.html?v=18'});}
-    if(pemicu.includes('Rumah') || rasa.includes('Capek')){base.push({title:'Satu Langkah Hari Ini',desc:'Pilih langkah kecil seperti rapikan satu sudut atau minum air sadar.',href:'satu-langkah-hari-ini.html?v=18'});}
-    base.push({title:'Riwayat Pola',desc:'Lihat apakah kondisi ini sering muncul dalam 7 hari terakhir.',href:'riwayat-pola.html?v=18'});
+    if(rasa.includes('Tenang')){base.push({title:'Satu Langkah Hari Ini',desc:'Jaga arah hari dengan satu tindakan kecil.',href:'satu-langkah-hari-ini.html?v=19',primary:true});}
+    else{base.push({title:'Mode Jeda Cepat',desc:'Ambil jeda, turunkan intensitas, lalu pilih respons aman.',href:'mode-jeda-cepat.html?v=19',primary:true});}
+    if(pemicu.includes('Komunikasi') || rasa.includes('Tersinggung') || rasa.includes('Marah')){base.push({title:'Template Respons Tenang',desc:'Bantu susun balasan halus, tegas, atau singkat sebelum kirim pesan.',href:'template-respons-tenang.html?v=19'});}
+    if(pemicu.includes('Rumah') || rasa.includes('Capek')){base.push({title:'Satu Langkah Hari Ini',desc:'Pilih langkah kecil seperti rapikan satu sudut atau minum air sadar.',href:'satu-langkah-hari-ini.html?v=19'});}
+    base.push({title:'Riwayat Pola',desc:'Lihat apakah kondisi ini sering muncul dalam 7 hari terakhir.',href:'riwayat-pola.html?v=19'});
     return base;
   }
   document.getElementById('saveBtn').addEventListener('click',()=>{
