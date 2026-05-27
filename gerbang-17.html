@@ -19,8 +19,9 @@
     .btn.big{padding:18px 16px;font-size:18px}
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
     .mini{border-radius:16px;padding:12px}.mini b{font-size:16px;font-family:Georgia,serif}.mini span{display:block;font-size:13px;line-height:1.35;margin-top:4px;opacity:.86}
+    .dash{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin:16px 0}.dashItem{border-radius:16px;padding:12px;background:rgba(255,250,242,.72)}.dashItem b{font-family:Georgia,serif;font-size:24px;display:block}.dashItem span{font-size:12px;line-height:1.25;opacity:.82}
     .note{font-size:13px;opacity:.78;margin-top:15px}
-    @media(max-width:420px){.grid{grid-template-columns:1fr}h1{font-size:40px}.box{padding:20px}}
+    @media(max-width:420px){.grid,.dash{grid-template-columns:1fr}h1{font-size:40px}.box{padding:20px}}
   </style>
 </head>
 <body>
@@ -32,20 +33,26 @@
       <p class="lead">Pilih ruang yang paling kamu butuhkan hari ini. Mulai dari jeda kecil sebelum bereaksi.</p>
       <div class="quote">Berhenti sebentar. Sadari keadaan diri. Tenangkan tubuh. Pilih satu langkah yang lebih jernih.</div>
 
+      <div class="dash" aria-label="Ringkasan lokal Naik-Sadar">
+        <div class="dashItem"><b id="cekCount">0</b><span>Cek diri 7 hari</span></div>
+        <div class="dashItem"><b id="jedaCount">0</b><span>Jeda 7 hari</span></div>
+        <div class="dashItem"><b id="stepStatus">-</b><span>Langkah hari ini</span></div>
+      </div>
+
       <h2>Mulai Cepat</h2>
-      <a class="btn primary big" href="cek-diri-10-detik.html?v=18">Cek Diri 10 Detik<span>Pilih rasa dan pemicu, lalu aplikasi arahkan ke langkah yang paling cocok.</span></a>
-      <a class="btn dark" href="mode-jeda-cepat.html?v=18">Mode Jeda Cepat<span>Bantuan singkat ketika emosi naik, impuls muncul, atau keputusan terasa mendesak.</span></a>
-      <a class="btn" href="template-respons-tenang.html?v=18">Template Respons Tenang<span>Pilih balasan halus, tegas, atau singkat sebelum mengirim pesan.</span></a>
+      <a class="btn primary big" href="cek-diri-10-detik.html?v=19">Cek Diri 10 Detik<span>Pilih rasa dan pemicu, lalu aplikasi arahkan ke langkah yang paling cocok.</span></a>
+      <a class="btn dark" href="mode-jeda-cepat.html?v=19">Mode Jeda Cepat<span>Bantuan singkat ketika emosi naik, impuls muncul, atau keputusan terasa mendesak.</span></a>
+      <a class="btn" href="template-respons-tenang.html?v=19">Template Respons Tenang<span>Pilih balasan halus, tegas, atau singkat sebelum mengirim pesan.</span></a>
 
       <h2>Latihan Harian</h2>
-      <a class="btn" href="satu-langkah-hari-ini.html?v=18">Satu Langkah Hari Ini<span>Pilih satu tindakan kecil yang bisa dilakukan hari ini dengan sadar.</span></a>
-      <a class="btn" href="latihan-pro-dark.html?v=18">Latihan Singkat<span>Napas, refleksi pendek, dan latihan kembali ke pusat diri.</span></a>
-      <a class="btn" href="riwayat-pola.html?v=18">Riwayat Pola<span>Lihat catatan jeda, kondisi yang sering muncul, dan arah langkah 7 hari terakhir.</span></a>
-      <a class="btn" href="kebersihan-sadar-safe.html?v=18">Kerapian Area<span>Rapikan ruang luar sebagai jalan menenangkan ruang dalam.</span></a>
+      <a class="btn" href="satu-langkah-hari-ini.html?v=19">Satu Langkah Hari Ini<span>Pilih satu tindakan kecil yang bisa dilakukan hari ini dengan sadar.</span></a>
+      <a class="btn" href="latihan-pro-dark.html?v=19">Latihan Singkat<span>Napas, refleksi pendek, dan latihan kembali ke pusat diri.</span></a>
+      <a class="btn" href="riwayat-pola.html?v=19">Riwayat Pola<span>Lihat catatan jeda, kondisi yang sering muncul, dan arah langkah 7 hari terakhir.</span></a>
+      <a class="btn" href="kebersihan-sadar-safe.html?v=19">Kerapian Area<span>Rapikan ruang luar sebagai jalan menenangkan ruang dalam.</span></a>
 
       <h2>Ruang Pendukung</h2>
-      <a class="btn" href="kebersihan-5s-nusantara.html?v=18">Mode 5S<span>Pilah, tata, bersihkan, standarkan, dan pelihara area.</span></a>
-      <a class="btn" href="naik-sadar-2-dark.html?v=18">Versi Lengkap<span>Ruang tambahan dengan musik, tema, dan latihan pendukung.</span></a>
+      <a class="btn" href="kebersihan-5s-nusantara.html?v=19">Mode 5S<span>Pilah, tata, bersihkan, standarkan, dan pelihara area.</span></a>
+      <a class="btn" href="naik-sadar-2-dark.html?v=19">Versi Lengkap<span>Ruang tambahan dengan musik, tema, dan latihan pendukung.</span></a>
 
       <div class="grid">
         <div class="mini"><b>Cek Diri</b><span>Kenali rasa dan pemicu.</span></div>
@@ -56,6 +63,19 @@
       <p class="note">Naik-Sadar adalah alat refleksi dan jeda sadar. Bukan pengganti bantuan profesional saat kondisi terasa tidak aman.</p>
     </section>
   </main>
+  <script>
+    const now=Date.now();
+    const seven=7*24*60*60*1000;
+    function read(key){try{return JSON.parse(localStorage.getItem(key)||'[]').filter(Boolean)}catch(e){return []}}
+    function count7(key){return read(key).filter(x=>x.tanggal && (now-new Date(x.tanggal).getTime())<=seven).length}
+    document.getElementById('cekCount').textContent=count7('naikSadarCekDiriLog');
+    document.getElementById('jedaCount').textContent=count7('naikSadarJedaLog');
+    try{
+      const today=new Date().toISOString().slice(0,10);
+      const step=JSON.parse(localStorage.getItem('naikSadarStepToday')||'null');
+      document.getElementById('stepStatus').textContent=(step && step.day===today && step.done)?'Selesai':'Belum';
+    }catch(e){document.getElementById('stepStatus').textContent='-'}
+  </script>
   <script src="assets/nusantara-theme-toggle.js"></script>
   <script src="assets/nusantara-audio.js"></script>
 </body>
