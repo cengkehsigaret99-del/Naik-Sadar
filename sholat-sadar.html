@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sholat Sadar | Naik-Sadar</title>
+  <link rel="stylesheet" href="assets/nusantara-theme.css">
+  <style>
+    body{margin:0;min-height:100vh;padding:18px;font-family:system-ui,sans-serif}
+    main{max-width:620px;margin:0 auto;padding:10px 0 34px}.card{border-radius:28px;padding:22px;margin:12px 0}.tag{font-size:12px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;opacity:.8}
+    h1{font-family:Georgia,serif;font-size:38px;line-height:1.05;margin:8px 0}h2{font-size:16px;margin:18px 0 10px}p{font-size:16px;line-height:1.55}.muted{opacity:.78}.small{font-size:13px}
+    .topnav{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.topnav a{font-size:13px;text-decoration:none;border-radius:999px;padding:9px 11px;background:rgba(255,250,242,.78);font-weight:900;color:inherit}.btn,.pill{display:block;width:100%;box-sizing:border-box;text-align:left;border:0;border-radius:16px;padding:14px 15px;margin:9px 0;font-weight:900;color:inherit;text-decoration:none;font-size:15px;cursor:pointer;background:rgba(255,250,242,.72)}.primary{background:#9b2f20!important;color:#fff!important}.dark{background:#24170f!important;color:#fff!important}.btn span,.pill span{display:block;font-size:13px;line-height:1.4;margin-top:4px;font-weight:700;opacity:.86}
+    .step{border-left:6px solid #d8a84f;border-radius:18px;padding:15px;background:rgba(255,250,242,.72);margin:12px 0}.step b{font-family:Georgia,serif;font-size:22px;display:block;margin-bottom:7px}.hidden{display:none}textarea,input{width:100%;box-sizing:border-box;border-radius:14px;border:1px solid rgba(92,53,25,.22);padding:12px;font:inherit;background:rgba(255,250,242,.82);color:inherit}input[type=range]{padding:0;border:0;background:transparent;accent-color:#9b2f20}.score{font-family:Georgia,serif;font-size:28px;font-weight:900}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.status{border-radius:16px;padding:12px;background:rgba(255,250,242,.72);font-weight:900;margin-top:12px}
+    @media(max-width:520px){.row{grid-template-columns:1fr}h1{font-size:34px}.card{padding:19px}}
+  </style>
+</head>
+<body>
+<main>
+  <div class="topnav"><a href="gerbang-17.html?v=22">← Beranda</a><a href="peta-alur.html?v=22">Peta Alur</a><a href="perluas-sudut-pandang.html?v=22">Sudut Pandang</a></div>
+
+  <section class="card">
+    <div class="tag">Sholat Sadar</div>
+    <h1>Masuk sholat dengan lebih hadir.</h1>
+    <p class="muted">Menu ini adalah pendamping kesadaran sebelum dan sesudah sholat. Bukan tuntunan fiqih, bukan fatwa, dan bukan penentu sah atau tidaknya ibadah.</p>
+    <div class="step"><b>Alur</b><p>Cek Diri → Wudhu Sadar → Niat Hadir → Setelah Salam → Satu Langkah Sadar</p></div>
+  </section>
+
+  <section class="card" id="awal">
+    <div class="tag">Sebelum Wudhu</div>
+    <h2>Saya masuk wudhu dengan keadaan apa?</h2>
+    <button class="pill primary" data-rasa="marah atau panas">Marah atau panas<span>Butuh menurunkan reaksi sebelum menghadap Allah.</span></button>
+    <button class="pill" data-rasa="gelisah atau takut">Gelisah atau takut<span>Butuh menitipkan kekhawatiran dan kembali hadir.</span></button>
+    <button class="pill" data-rasa="capek atau berat">Capek atau berat<span>Butuh hadir pelan-pelan, tidak memaksa.</span></button>
+    <button class="pill" data-rasa="banyak pikiran">Banyak pikiran<span>Butuh mengumpulkan perhatian kembali.</span></button>
+    <button class="pill" data-rasa="ingin tenang">Ingin tenang<span>Butuh menjaga hati agar tidak autopilot.</span></button>
+  </section>
+
+  <section class="card hidden" id="wudhu">
+    <div class="tag">Wudhu Sadar</div>
+    <h1>Basuh, sadari, lepaskan.</h1>
+    <div class="step"><b>Wajah</b><p>Lepaskan satu pikiran yang mengeruhkan pandangan.</p></div>
+    <div class="step"><b>Tangan</b><p>Lepaskan dorongan membalas, menyerang, atau tergesa-gesa.</p></div>
+    <div class="step"><b>Kepala</b><p>Dinginkan kepala. Tidak semua pikiran harus diikuti sekarang.</p></div>
+    <div class="step"><b>Kaki</b><p>Luruskan arah langkah setelah sholat.</p></div>
+    <h2>Niat hadir</h2>
+    <textarea id="titip" rows="3" placeholder="Contoh: Ya Allah, saya titipkan amarah, takut, rezeki, keluarga, keputusan, atau rasa ingin mengontrol."></textarea>
+    <button class="btn dark" id="lanjutBtn">Saya Siap Sholat<span>Lanjutkan sholat dengan lebih hadir. Setelah salam, kembali ke halaman ini.</span></button>
+  </section>
+
+  <section class="card hidden" id="setelah">
+    <div class="tag">Setelah Salam</div>
+    <h1>Apa yang berubah setelah sholat?</h1>
+    <p class="muted">Tidak harus langsung sempurna. Cukup sadari apakah ada ruang yang lebih jernih sebelum melangkah.</p>
+    <h2>Intensitas rasa setelah sholat: <span class="score" id="scoreVal">5</span></h2>
+    <input id="score" type="range" min="1" max="10" value="5">
+    <h2>Satu langkah sadar setelah salam</h2>
+    <textarea id="langkah" rows="3" placeholder="Contoh: tidak balas pesan dulu, cek data, minta maaf, diam 10 menit, lanjut kerja kecil."></textarea>
+    <div class="row"><button class="btn dark" id="saveBtn">Simpan Sholat Sadar</button><a class="btn" href="satu-langkah-hari-ini.html?v=22">Ambil Satu Langkah</a></div>
+    <div class="status hidden" id="savedBox">Catatan Sholat Sadar tersimpan di perangkat ini.</div>
+  </section>
+</main>
+<script>
+  let rasa='';
+  const awal=document.getElementById('awal'), wudhu=document.getElementById('wudhu'), setelah=document.getElementById('setelah');
+  document.querySelectorAll('[data-rasa]').forEach(btn=>btn.addEventListener('click',()=>{rasa=btn.dataset.rasa; awal.classList.add('hidden'); wudhu.classList.remove('hidden'); window.scrollTo({top:0,behavior:'smooth'});}));
+  document.getElementById('lanjutBtn').addEventListener('click',()=>{setelah.classList.remove('hidden'); setTimeout(()=>setelah.scrollIntoView({behavior:'smooth'}),200);});
+  const score=document.getElementById('score'), scoreVal=document.getElementById('scoreVal');
+  score.addEventListener('input',()=>scoreVal.textContent=score.value);
+  document.getElementById('saveBtn').addEventListener('click',()=>{
+    const key='naikSadarSholatLog'; const old=JSON.parse(localStorage.getItem(key)||'[]');
+    old.unshift({tanggal:new Date().toISOString(),rasaSebelum:rasa,titipan:document.getElementById('titip').value.trim(),scoreSetelah:Number(score.value),langkah:document.getElementById('langkah').value.trim()});
+    localStorage.setItem(key,JSON.stringify(old.slice(0,50))); document.getElementById('savedBox').classList.remove('hidden');
+  });
+</script>
+<script src="assets/nusantara-theme-toggle.js?v=22"></script>
+<script src="assets/nusantara-audio.js?v=22"></script>
+</body>
+</html>
