@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Maskot Naik-Sadar Cahaya Sadar">
+  <defs>
+    <radialGradient id="halo" cx="50%" cy="42%" r="62%">
+      <stop offset="0" stop-color="#fff0a8" stop-opacity="0.95"/>
+      <stop offset="0.55" stop-color="#f2c766" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#fffaf0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="flame" x1="54" y1="18" x2="170" y2="170" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f3c85c"/>
+      <stop offset="0.42" stop-color="#fff0a8"/>
+      <stop offset="1" stop-color="#b66a34"/>
+    </linearGradient>
+    <linearGradient id="bronze" x1="44" y1="122" x2="196" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2b211a"/>
+      <stop offset="0.48" stop-color="#6f3f21"/>
+      <stop offset="1" stop-color="#24170f"/>
+    </linearGradient>
+    <linearGradient id="leaf" x1="36" y1="168" x2="204" y2="195" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#55785b"/>
+      <stop offset="1" stop-color="#6b9b93"/>
+    </linearGradient>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#24170f" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <circle cx="120" cy="118" r="104" fill="url(#halo)"/>
+  <g filter="url(#softShadow)">
+    <path d="M121 27c28 22 54 61 50 98-4 39-27 67-51 67s-48-28-51-67c-3-36 24-55 31-84 14 15 14 30 9 43 19-12 25-32 12-57z" fill="url(#flame)" stroke="#d9a441" stroke-width="3"/>
+    <path d="M55 126c26 12 46 30 65 64 19-34 39-52 65-64 2 34-16 68-65 78-49-10-67-44-65-78z" fill="url(#bronze)" stroke="#d9a441" stroke-width="3"/>
+    <path d="M48 157c25 6 44 17 63 45-31 5-60-5-76-27 7-8 11-13 13-18z" fill="url(#leaf)" stroke="#d9a441" stroke-width="2" opacity="0.96"/>
+    <path d="M192 157c-25 6-44 17-63 45 31 5 60-5 76-27-7-8-11-13-13-18z" fill="url(#leaf)" stroke="#d9a441" stroke-width="2" opacity="0.96"/>
+    <path d="M120 136l20 22-20 24-20-24 20-22z" fill="#f0c96b" stroke="#b66a34" stroke-width="2"/>
+    <path d="M100 113c9 7 17 7 26 0" fill="none" stroke="#6f3f21" stroke-width="6" stroke-linecap="round" transform="translate(-13 0)"/>
+    <path d="M140 113c9 7 17 7 26 0" fill="none" stroke="#6f3f21" stroke-width="6" stroke-linecap="round" transform="translate(-13 0)"/>
+    <path d="M108 135c8 8 16 8 24 0" fill="none" stroke="#6f3f21" stroke-width="5" stroke-linecap="round"/>
+    <path d="M120 88l8 14-8 14-8-14 8-14z" fill="#b66a34" opacity="0.75"/>
+    <ellipse cx="120" cy="207" rx="56" ry="10" fill="#24170f" opacity="0.18"/>
+  </g>
+</svg>
