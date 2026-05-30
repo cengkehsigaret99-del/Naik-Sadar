@@ -4,25 +4,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>Naik Sadar</title>
-  <link rel="stylesheet" href="assets/nusantara-theme.css?v=26">
+  <link rel="stylesheet" href="assets/nusantara-theme.css?v=28">
   <style>
-    html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#f7ebd4;color:#24170f;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
-    .shell{position:fixed;inset:0;width:100%;height:100%;background:linear-gradient(160deg,#fffaf2,#eef6ef 50%,#f8e8e2)}
-    iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:transparent;display:block}
-    .fallback{position:fixed;right:12px;bottom:12px;z-index:20;display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end;pointer-events:none}
-    .fallback a{pointer-events:auto;text-decoration:none;border-radius:999px;padding:9px 11px;background:rgba(255,250,242,.92);box-shadow:0 10px 28px rgba(52,70,66,.12);color:#24170f;font-size:12px;font-weight:900;border:1px solid rgba(216,168,79,.22)}
+    html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--ns-color-bg);color:var(--ns-color-ink);font-family:var(--ns-font-ui)}
+    .shell{position:fixed;inset:0;width:100%;height:100%;background:transparent}
+    iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:transparent;display:block;color-scheme:light dark}
+    .fallback{position:fixed;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:50;display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end;pointer-events:none}
+    .fallback a{pointer-events:auto;text-decoration:none;border-radius:999px;padding:9px 12px;background:rgba(255,250,240,.88);box-shadow:var(--ns-shadow-soft);color:var(--ns-color-ink);font-size:12px;font-weight:900;border:1px solid var(--ns-color-line);backdrop-filter:blur(10px)}
+    html[data-theme="dark"] .fallback a{background:rgba(43,31,25,.90);color:var(--ns-color-ink)}
     @media(max-width:420px){.fallback{right:10px;bottom:10px}.fallback a{font-size:11px;padding:8px 10px}}
   </style>
 </head>
 <body>
   <main class="shell">
-    <iframe id="naikSadarFrame" src="gerbang-10.html?v=menuicon2" title="Naik Sadar" loading="eager"></iframe>
+    <iframe id="naikSadarFrame" name="naikSadarFrame" src="gerbang-10.html?v=nusantara28" title="Naik Sadar" loading="eager"></iframe>
   </main>
   <div class="fallback" aria-label="Navigasi cadangan">
-    <a href="gerbang-10.html?v=menuicon2" target="naikSadarFrame">Beranda</a>
-    <a href="panduan-harian.html?v=menuicon1" target="naikSadarFrame">Panduan</a>
+    <a href="gerbang-10.html?v=nusantara28" target="naikSadarFrame">Beranda</a>
+    <a href="panduan-harian.html?v=nusantara28" target="naikSadarFrame">Panduan</a>
   </div>
-  <script src="assets/nusantara-theme-toggle.js?v=26"></script>
+  <script src="assets/nusantara-theme-toggle.js?v=28"></script>
   <script src="assets/nusantara-audio.js?v=26"></script>
 </body>
 </html>
