@@ -6,7 +6,6 @@
   const modes=['auto','light','dark'];
 
   function getPref(){ return localStorage.getItem(KEY)||'auto'; }
-  function setPref(v){ localStorage.setItem(KEY,v); apply(); updateButton(); }
   function prefersDark(){ return window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches; }
   function activeMode(){ const p=getPref(); return p==='auto' ? (prefersDark()?'dark':'light') : p; }
 
@@ -14,7 +13,10 @@
     const p=getPref();
     document.documentElement.setAttribute('data-theme-pref',p);
     document.documentElement.setAttribute('data-theme',activeMode());
+    syncFrames();
   }
+
+  function setPref(v){ localStorage.setItem(KEY,v); apply(); updateButton(); }
 
   function label(){
     const p=getPref();
@@ -44,19 +46,43 @@
     b.title='Klik untuk ganti tema: Auto → Terang → Gelap';
   }
 
+  function syncFrames(){
+    document.querySelectorAll('iframe').forEach(function(frame){
+      try{
+        if(frame.contentWindow){
+          frame.contentWindow.postMessage({type:'ns-theme',pref:getPref(),theme:activeMode()},'*');
+          const doc=frame.contentDocument;
+          if(doc&&doc.documentElement){
+            doc.documentElement.setAttribute('data-theme-pref',getPref());
+            doc.documentElement.setAttribute('data-theme',activeMode());
+          }
+        }
+      }catch(e){}
+    });
+  }
+
   function makeButton(){
+    if(window.top!==window.self) return;
     if(document.getElementById('nsThemeToggle')) return;
     const b=document.createElement('button');
     b.id='nsThemeToggle';
     b.type='button';
-    b.style.cssText='position:fixed;left:14px;top:14px;z-index:10000;border-radius:999px;padding:10px 13px;font-weight:900;font-size:12px;letter-spacing:.01em;backdrop-filter:blur(10px)';
     b.onclick=function(){ setPref(next()); };
     document.body.appendChild(b);
     updateButton();
   }
 
+  window.addEventListener('message',function(ev){
+    const d=ev.data||{};
+    if(d.type==='ns-theme'){
+      document.documentElement.setAttribute('data-theme-pref',d.pref||'auto');
+      document.documentElement.setAttribute('data-theme',d.theme||activeMode());
+    }
+  });
+
   apply();
-  document.addEventListener('DOMContentLoaded',function(){ apply(); makeButton(); });
+  document.addEventListener('DOMContentLoaded',function(){ apply(); makeButton(); syncFrames(); });
+  window.addEventListener('load',syncFrames);
   if(window.matchMedia){
     const m=window.matchMedia('(prefers-color-scheme: dark)');
     if(m.addEventListener) m.addEventListener('change',function(){ apply(); updateButton(); });
