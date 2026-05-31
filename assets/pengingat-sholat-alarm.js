@@ -18,7 +18,6 @@
   function getDuration(){ return parseInt(localStorage.getItem(STORE.duration) || '60', 10); }
   function getSnooze(){ return parseInt(localStorage.getItem(STORE.snooze) || '5', 10); }
   function getTone(){ return localStorage.getItem(STORE.tone) || 'lembut'; }
-
   function saveSetting(key, val){ localStorage.setItem(key, String(val)); }
 
   function ensureAudio(){
@@ -61,9 +60,7 @@
     }catch(e){}
   }
 
-  function vibrate(){
-    if(navigator.vibrate) navigator.vibrate([240,120,240,180,360]);
-  }
+  function vibrate(){ if(navigator.vibrate) navigator.vibrate([240,120,240,180,360]); }
 
   function css(){
     if(document.getElementById('nsSholatAlarmStyle')) return;
@@ -97,7 +94,7 @@
       card.className = 'alarm-settings';
       card.innerHTML = `
         <h2 style="font-family:Georgia,serif;color:var(--rs-tanah);margin-top:0">Mode alarm aktif</h2>
-        <p class="soft-note">Alarm berbunyi berulang lembut sampai dihentikan, atau otomatis berhenti sesuai durasi. Bisa ditunda dengan Snooze.</p>
+        <p class="soft-note">Alarm berbunyi berulang lembut saat waktu sholat masuk sampai dihentikan, atau otomatis berhenti sesuai durasi. Bisa ditunda dengan Snooze.</p>
         <div class="alarm-grid">
           <label>Durasi alarm<select id="alarmDuration"><option value="30">30 detik</option><option value="60">1 menit</option><option value="120">2 menit</option><option value="300">5 menit</option></select></label>
           <label>Tunda alarm<select id="alarmSnooze"><option value="5">5 menit</option><option value="10">10 menit</option><option value="15">15 menit</option></select></label>
@@ -149,7 +146,6 @@
     if(name) name.textContent = prayer.name || 'Waktu Sholat';
     if(msg) msg.textContent = prayer.msg || prayer.message || 'Waktu memanggil, batin kembali.';
     if(overlay) overlay.classList.add('on');
-
     const text = (isTest ? '' : 'Alarm sholat aktif. ') + (prayer.name || 'Waktu sholat') + '. ' + (prayer.msg || prayer.message || 'Berhenti, hadir, tunduk, pasrah, kembali dengan damai.');
     playChime(); vibrate(); speak(text);
     repeatTimer = setInterval(function(){ playChime(); vibrate(); }, getTone()==='tegas' ? 2200 : 3200);
@@ -179,9 +175,9 @@
     if(typeof window.fireReminder !== 'function') return false;
     if(window.fireReminder.__alarmPatched) return true;
     originalFire = window.fireReminder;
-    window.fireReminder = function(n){
-      try{ originalFire(n); }catch(e){}
-      startAlarm(n, false);
+    window.fireReminder = function(n,type){
+      try{ originalFire.apply(this, arguments); }catch(e){}
+      if(type === 'alarm') startAlarm(n, false);
     };
     window.fireReminder.__alarmPatched = true;
     return true;
@@ -189,6 +185,8 @@
 
   function init(){
     buildControls();
+    window.nsStartSholatAlarm = startAlarm;
+    window.nsStopSholatAlarm = stopAlarm;
     if(!patchFireReminder()){
       let tries = 0;
       const t = setInterval(function(){
