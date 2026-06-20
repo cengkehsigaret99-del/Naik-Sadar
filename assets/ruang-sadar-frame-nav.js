@@ -6,6 +6,7 @@
     ['Gerbang','ruang-sadar.html?v=1','ruang-sadar.html'],
     ['Cermin','cermin-diri.html?v=1','cermin-diri.html'],
     ['Napas','ruang-napas.html?v=1','ruang-napas.html'],
+    ['999','ritme-super-999-panduan.html?v=4','ritme-super-999-panduan.html'],
     ['Waktu','pengingat-sholat.html?v=1','pengingat-sholat.html'],
     ['Tanya','ruang-tanya.html?v=1','ruang-tanya.html'],
     ['Progres','dashboard-kesadaran.html?v=1','dashboard-kesadaran.html'],
@@ -28,7 +29,7 @@
       style.textContent = `
         body{padding-bottom:134px!important}
         .ns-cultural-shell{padding-bottom:150px!important}
-        .rs-frame-nav{position:fixed;left:50%;bottom:calc(10px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:9998;width:min(740px,calc(100% - 14px));display:grid;grid-template-columns:repeat(10,1fr);gap:3px;padding:7px;border-radius:24px;background:rgba(255,248,234,.92);border:1px solid rgba(75,46,31,.16);box-shadow:0 18px 44px rgba(75,46,31,.18);backdrop-filter:blur(10px)}
+        .rs-frame-nav{position:fixed;left:50%;bottom:calc(10px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:9998;width:min(780px,calc(100% - 14px));display:grid;grid-template-columns:repeat(11,1fr);gap:3px;padding:7px;border-radius:24px;background:rgba(255,248,234,.92);border:1px solid rgba(75,46,31,.16);box-shadow:0 18px 44px rgba(75,46,31,.18);backdrop-filter:blur(10px)}
         .rs-frame-nav a{min-height:44px;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:16px;text-decoration:none;color:#6f5b48;font-size:9px;font-weight:950;letter-spacing:.01em;line-height:1.05}
         .rs-frame-nav a[aria-current="page"]{background:linear-gradient(145deg,#f4d88a,#b9822b);color:#211a15;box-shadow:0 8px 18px rgba(185,130,43,.18)}
         html[data-theme="dark"] body.rs-body{color:#fff8ea!important;background:radial-gradient(circle at 16% 8%,rgba(185,130,43,.13),transparent 26%),radial-gradient(circle at 88% 14%,rgba(109,154,164,.10),transparent 30%),linear-gradient(150deg,#15100d,#241910 60%,#0d0a08)!important}
@@ -41,7 +42,7 @@
         html[data-theme="dark"] .rs-frame-nav a{color:rgba(255,248,234,.76)!important}
         html[data-theme="dark"] .rs-frame-nav a[aria-current="page"]{color:#211a15!important;background:linear-gradient(145deg,#f4d88a,#b9822b)!important}
         @media(max-width:430px){.rs-frame-nav a{font-size:8px;min-height:40px}.rs-frame-nav{gap:2px;padding:6px;border-radius:22px}}
-        @media(max-width:390px){.rs-frame-nav{grid-template-columns:repeat(5,1fr)}body{padding-bottom:178px!important}.ns-cultural-shell{padding-bottom:198px!important}}
+        @media(max-width:390px){.rs-frame-nav{grid-template-columns:repeat(6,1fr)}body{padding-bottom:178px!important}.ns-cultural-shell{padding-bottom:198px!important}}
         @media(prefers-reduced-motion:reduce){.rs-frame-nav,.rs-frame-nav *{transition:none!important;animation:none!important}}
       `;
       doc.head.appendChild(style);
